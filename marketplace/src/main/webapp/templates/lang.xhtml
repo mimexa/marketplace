@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+<ui:composition>
+	<rich:dropDownMenu
+		style="float: right; text-align: center; width:45px; margin-right: 30px"
+		popupWidth="45" direction="bottomRight" styleClass="dropDownMenuHead">
+		<f:facet name="label">
+			<h:graphicImage
+				value="/resources/img/#{bannerController.form.lang}.png"
+				alt="#{bannerController.form.lang}"
+				style="width: 16px; position:relative; top: 3px;" />
+			<h:outputText value="#{bannerController.form.lang}"
+				style="margin-left:5px; margin-top:2px; vertical-align:center; position: absolute" />
+        </f:facet>
+		<rich:menuItem label="FR" icon="/resources/img/FR.png"
+			action="#{bannerController.changeLanguage('FR')}" render="@all"
+			style="width:45px" styleClass="dropDownMenuItem" />
+		<rich:menuItem label="EN" icon="/resources/img/EN.png"
+			action="#{bannerController.changeLanguage('EN')}" render="@all"
+			style="width:45px" styleClass="dropDownMenuItem" />
+		<rich:menuItem label="NL" icon="/resources/img/HD.png"
+			action="#{bannerController.changeLanguage('HD')}" render="@all"
+			style="width:45px" styleClass="dropDownMenuItem" />
+	</rich:dropDownMenu>
+</ui:composition>
+</html>

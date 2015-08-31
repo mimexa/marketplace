@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:p="http://primefaces.org/ui">
+	<rich:popupPanel id="confirmationPopup" modal="true" autosized="true"
+		domElementAttachment="form" resizeable="false">
+		<f:facet name="header">
+			<h:outputText value="Confirmaion requise" />
+		</f:facet>
+		<f:facet name="controls">
+			<h:outputLink value="#"
+				onclick="#{rich:component('confirmationPopup')}.hide(); return false;">
+                X
+            </h:outputLink>
+		</f:facet>
+		<h:outputText
+			value="Etes vous sûr de vouloir remettre à zéro tout les champs de ce forumlaire et supprimer les images ?" />
+		<br />
+		<br />
+		<p:commandButton value="Annuler" id="AnnulerBtn">
+			<rich:componentControl target="confirmationPopup" operation="hide" />
+		</p:commandButton>
+		<h:commandButton action="#{produitController.reset}"
+			style="margin-left:5px" id="connexionBtn" value="Reset" />
+		<p:defaultCommand target="AnnulerBtn" />
+	</rich:popupPanel>
+</ui:composition>

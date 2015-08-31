@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j" xmlns:p="http://primefaces.org/ui"
+	xmlns:tag="http://velocafe.paris/velocafe/taglib">
+<ui:composition template="/templates/template.xhtml">
+	<ui:define name="title">Vélo Café Paris</ui:define>
+	<ui:define name="body">
+		<h:form style="height: 100%">
+			<table style="width: 100%">
+				<tr style="width: 100%; vertical-align: top">
+					<td style="width: 50%; height: 100%;"><tag:contact /></td>
+					<td style="width: 50%; height: 100%;"><rich:panel
+							style="height:100%; font-size:14px !important;"
+							headerClass="headerPanel" bodyClass="blanckBody">
+							<f:facet name="header">Horaires</f:facet>
+							<table>
+								<tr>
+									<td><h:outputText value="Lundi :" /></td>
+									<td><h:outputText value="18h30 - 20h00" /></td>
+								</tr>
+								<tr>
+									<td><h:outputText value="Mardi :" /></td>
+									<td><h:outputText value="18h30 - 20h00" /></td>
+								</tr>
+								<tr>
+									<td><h:outputText value="Mercredi :" /></td>
+									<td><h:outputText value="18h30 - 20h00" /></td>
+								</tr>
+								<tr>
+									<td><h:outputText value="Jeudi :" /></td>
+									<td><h:outputText value="18h30 - 20h00" /></td>
+								</tr>
+								<tr>
+									<td><h:outputText value="Vendredi :" /></td>
+									<td><h:outputText value="18h30 - 20h00" /></td>
+								</tr>
+								<tr>
+									<td><h:outputText value="Samedi :" /></td>
+									<td><h:outputText value="18h30 - 20h00" /></td>
+								</tr>
+								<tr>
+									<td><h:outputText value="Dimanche et jours fériés :" /></td>
+									<td><h:outputText value="Fermé" /></td>
+								</tr>
+								<tr>
+									<td colspan="2"><h:outputText
+											value="Rdv conseillé pendant les périodes d'afluence" /></td>
+								</tr>
+							</table>
+						</rich:panel></td>
+				</tr>
+			</table>
+			<rich:panel style="min-height:350px" headerClass="headerPanel">
+				<f:facet name="header">Accès transports en commun</f:facet>
+				<table style="width: 100%">
+					<tr>
+						<td style="width: 400px; height: 300px; vertical-align: top"><rich:accordion
+								itemHeaderClass="accordionHeader">
+								<rich:accordionItem header="Metro" contentClass="blanckBody">
+									<ul>
+										<li><h:outputText styleClass="accordeonItem"
+												value="Ligne 6 - Duplex : à 5 minutes de marche de la station" /></li>
+										<li><h:outputText styleClass="accordeonItem"
+												value="Ligne M10 - Charles Michel : à 10 minutes de marche de la station" /></li>
+										<li><h:outputText styleClass="accordeonItem"
+												value="Plus d'informations sur le site " /> <h:outputLink
+												target="blank" styleClass="accordeonItem"
+												value="http://www.ratp.fr/itineraires/fr/ratp/recherche-avancee">
+								www.ratp.fr</h:outputLink></li>
+									</ul>
+								</rich:accordionItem>
+								<rich:accordionItem header="Bus" contentClass="blanckBody">
+									<ul>
+										<li><h:outputText styleClass="accordeonItem"
+												value="Bus 42 - Station 'rue Rouelle' au pied du local" /></li>
+										<li><h:outputText styleClass="accordeonItem"
+												value="Bus 80 - La Motte Piquet Grenelle : à 13 minutes de marche de la station" /></li>
+										<li><h:outputText styleClass="accordeonItem"
+												value="Plus d'informations sur le site " /> <h:outputLink
+												target="blank" styleClass="accordeonItem"
+												value="http://www.ratp.fr/itineraires/fr/ratp/recherche-avancee">
+								www.ratp.fr</h:outputLink></li>
+									</ul>
+								</rich:accordionItem>
+								<rich:accordionItem header="Vélib" contentClass="blanckBody">
+									<ul>
+										<li><h:outputText styleClass="accordeonItem"
+												value="Station 27 rue Emeriau - 15ème arrondissement" /></li>
+										<li><h:outputText styleClass="accordeonItem"
+												value="Station 60 rue du Théatre - 15ème arrondissement" /></li>
+										<li><h:outputText styleClass="accordeonItem"
+												value="Station 54 boulevard de Grenelle - 15ème arrondissement" /></li>
+										<li><h:outputText styleClass="accordeonItem"
+												value="Plus d'informations sur le site " /> <h:outputLink
+												styleClass="accordeonItem" target="blank"
+												value="http://www.velib.paris/Plan-stations">
+								www.velib.paris</h:outputLink></li>
+									</ul>
+								</rich:accordionItem>
+							</rich:accordion></td>
+						<td style="position: relative"><iframe
+								style="height: 100%; width: 100%; position: absolute; top: 0; left: 0; margin: 5px"
+								src="http://static.parastorage.com/services/santa/1.775.3/static/external/googleMap.html?address=37%20bis%2C%20rue%20Rouelle%2075015%20Paris%2C%20France&amp;addressInfo=V%C3%A9loCaf%C3%A9.Paris%0A37%20bis%2C%20rue%20Rouelle%0A75015%20Paris%2C%20France&amp;lat=48.8498905&amp;long=2.2886541000000307&amp;mapInteractive=true&amp;mapType=ROADMAP&amp;showMapType=true&amp;showPosition=true&amp;showStreetView=true&amp;showZoom=true&amp;ts=1320"
+								frameborder="0" scrolling="no"
+								data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c8gg.1.$GglMp0.0.0"></iframe></td>
+					</tr>
+				</table>
+			</rich:panel>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

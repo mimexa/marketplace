@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j" xmlns:p="http://primefaces.org/ui">
+<ui:composition>
+	<a4j:outputPanel id="imagePanel#{id}" style="text-align: right">
+		<f:event listener="#{imageController.setIdProduit(idProduit)}"
+			type="javax.faces.event.PreRenderComponentEvent" />
+		<p:carousel value="#{imageController.imgs}"
+			headerText="#{produitController.form.titre}" var="img"
+			itemStyle="text-align:center; " numVisible="1" easing="easeOutBounce"
+			circular="true" style="margin-top: 5px;">
+			<p:graphicImage value="/images?idImage=#{img.idImage}"
+				width="#{imageController.ficheWidth}" />
+			<br />
+			<h:commandButton value="Effacer cette image"
+				action="#{imageController.erase(img.idImage)}"
+				rendered="#{securityController.isAdminView()}" style="margin:5px" />
+		</p:carousel>
+		<p:fileUpload fileUploadListener="#{imageController.upload}"
+			allowTypes="/(\.|\/)(gif|jpe?g|png)$/" sizeLimit="1000000"
+			description="Selectionner images" update="@all"
+			uploadLabel="Charger image" cancelLabel="Annuler la sélection"
+			rendered="#{securityController.isAdminView()}"
+			style="margin-top:5px;" />
+	</a4j:outputPanel>
+</ui:composition>
+</html>

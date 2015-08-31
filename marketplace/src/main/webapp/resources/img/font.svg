@@ -1,0 +1,21 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient y2="1" x2="1" y1="0.36328" x1="0.37109" id="svg_4">
+   <stop stop-color="#ff0000" offset="0" />
+   <stop stop-color="#ffff00" offset="1" />
+  </linearGradient>
+  <linearGradient y2="1" x2="1" y1="0" x1="0" id="svg_6">
+   <stop stop-color="#9C9988" offset="0" />
+   <stop stop-color="#D0CCB5" offset="1" />
+  </linearGradient>
+ </defs>
+ <g>
+  <title>Calque 1</title>
+  <rect fill="url(#svg_6)" stroke="url(#svg_4)" stroke-width="0" x="-0.00003" y="0.00002" width="100%" height="100%" id="svg_1" />
+  <rect fill="#FF0000" stroke="#000000" stroke-width="5" x="1266" y="831" width="374" height="320" id="svg_2" />
+  <rect fill="#FF0000" stroke="#000000" stroke-width="5" x="1584" y="1041" width="12" height="7" id="svg_3" />
+ </g>
+</svg>

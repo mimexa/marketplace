@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j" xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/templates/template.xhtml">
+	<ui:define name="title">Vélo Café Paris</ui:define>
+	<ui:define name="body">
+		<h:form>
+			<h1>
+				<h:outputText
+					value="Traitement des données personnelles : nos engagements" />
+			</h1>
+			<h2>
+				<h:outputText
+					value="Vous trouverez ci-dessous notre politique en matière de traitement des données personnelles. Ce texte a pour but de vous informer sur la manière dont nous utilisons ces données et vous
+				indique la façon de procéder si vous souhaitez y apporter une modification." />
+			</h2>
+			<rich:panel header="1/ Nature des données personnelles recueillies">
+				<h:outputText
+					value="Les informations que nous sommes amenées é recueillir proviennent :" />
+				<ul>
+					<li><h:outputText
+							value="Soit de l'enregistrement volontaire d'une adresse e-mail vous permettant de recevoir l'une de nos newsletters (Journal du Net, JDN Solutions, JDN Développeurs, JDN télchargement, JDN
+						Tourisme...)" /></li>
+					<li><h:outputText
+							value="Soit de la saisie compléte de vos coordonnées dans notre boutique en ligne (nom, prénom, société, adresse de facturation et de livraison, numéro de téléphone, adresse e-mail) de maniére
+						é pouvoir traiter votre commande." /></li>
+				</ul>
+			</rich:panel>
+			<rich:panel header="2/ Que faisons-nous de ces données ?">
+				<h:outputText
+					value="Les informations que vous nous communiquez ne sont jamais confiées é des tiers. Selon les cas, les usages sont les suivants:" />
+				<ul>
+					<li><h:outputText
+							value="Si vous vous étes abonnés é l'une de nos newsletters. Dans ce cas, votre adresse mail est strictement utilisée pour l'envoi de nos mailing listes et d'annonces internes. Nous n'utilisons
+						jamais vos contacts en vue de l'envoi de messages d'éventuels partenaires commerciaux. Par ailleurs, vous pouvez é tout moment vous désabonner de notre newsletter en cliquant sur la mention
+						'Lien de désabonnement' qui figure sur chacune de nos newsletters. Ou, en cas d'incident, passer par notre procédure de désabonnement : cliquer ici." /></li>
+					<li><h:outputText
+							value="Si vous avez répondu é une enquéte et laissé vos coordonnées en vue de recevoir l'une de nos publications professionnelles. Dans ce cas, nous pouvons éventuellement étre amenés é vous
+						transmettre des messages d'autres partenaires. Toutefois vos coordonnées ne sont jamais communiquées é l'extérieur: nous effectuons nous mémes les envois. Cependant, vous pouvez vous opposer é
+						ce que vos coordonnées soient utilisées pour l'envoi de messages de ce type en cochant la case prévue é cet effet sur la page oé nous vous demandons d'indiquer vos coordonnées. Si vous avez
+						accepté de recevoir des messages de tiers, vous pouvez nous signaler que vous ne souhaitez plus en recevoir soit en cliquant sur la mention 'ne plus recevoir d'information' ou passer par notre procédure de désabonnement : cliquer ici." /></li>
+				</ul>
+				<h:outputText
+					value="Conformément é la loi Informatique et Libertés en date du 6 janvier 1978, vous disposez par ailleurs d'un droit d'accés, de rectification, de modification et de suppression concernant les données qui vous concernent. Vous pouvez exercer ce droit en consultant notre page contact/données personnelles." />
+			</rich:panel>
+			<rich:panel header="3/ Cookies">
+				<h:outputText
+					value="Afin d'optimiser l'usage de ses services en ligne, Benchmark Group se réserve le droit de placer des cookies sur les ordinateurs des utilisateurs de ses sites. Ces cookies sont notamment utilisés pour faciliter l'accés des utilisateurs é leurs comptes ainsi que pour afficher des bandeaux publicitaires adaptés é leur maniére de naviguer sur internet. Ces cookies peuvent étre délivrés par Benchmark Group ou par des entreprises tierces. Pour savoir comment refuser, supprimer ces 
+					Cookies ou étre prévenu de leur réception par un message, veuillez consulter la rubrique d'aide de votre navigateurinternet." />
+			</rich:panel>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

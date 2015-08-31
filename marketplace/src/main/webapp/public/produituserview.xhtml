@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:tag="http://velocafe.paris/velocafe/taglib">
+<ui:composition>
+	<rich:panel
+		rendered="#{securityController.isClientView() and not empty produitController.form.idProduit}"
+		style="width: #{produitController.ficheWidth}px">
+		<tag:img idProduit="#{produitController.form.idProduit}"
+			id="userViewImg" />
+		<rich:tabPanel switchType="client" style="margin-top: 5px"
+			styleClass="tabFiche">
+			<rich:tab header="Fiche" contentClass="tabFiche">
+				<table>
+					<tag:outputTextField value="#{produitController.form.titre}"
+						label="titre" />
+					<tag:outputTextField value="#{produitController.form.marque}"
+						label="Marque" />
+					<tag:outputTextField
+						value="#{produitController.form.montantHT+produitController.form.montantTVA} € ttc"
+						label="Prix" />
+				</table>
+			</rich:tab>
+			<rich:tab header="Spécifications" contentClass="tabFiche">
+				<table>
+					<tag:outputTextField
+						value="#{produitController.form.referenceFabricant}"
+						label="Reference fabricant" />
+					<tag:outputTextField
+						value="#{produitController.form.dateFabrication}"
+						label="Date fabrication" />
+					<tag:outputTextField
+						value="#{produitController.form.referenceTechnique}"
+						label="Référence technique" />
+				</table>
+			</rich:tab>
+			<rich:tab header="Disponibilité" contentClass="tabFiche">
+				<table>
+					<tag:outputTextField value="#{produitConrtoller.form.dateEntree}"
+						label="Date entrée" />
+				</table>
+			</rich:tab>
+		</rich:tabPanel>
+	</rich:panel>
+</ui:composition>
+</html>

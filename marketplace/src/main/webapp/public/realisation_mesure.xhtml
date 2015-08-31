@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j" xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/templates/template.xhtml">
+	<ui:define name="title">Vélo Café Paris</ui:define>
+	<ui:define name="body">
+		<h:form style="overflow:hidden">
+			<h1 style="float: left">Vélo à la carte</h1>
+			<h:graphicImage url="resources/img/veloCarte.jpg"
+				style="float: right; margin-right: 27px" width="150" />
+			<h:outputText
+				style="float:right; width:50%; margin: 5px; font-size:16px"
+				value="Quoi de mieux que configurer son vélo de rêve? En collaboration avec la société néerlandaise Cambio, VéloCafé vous accompagne a la création et customisation de votre vélo. Deux programmes; le 'Recycle' ou un nouveau vélo est crée à partir d'un cadre existant, et le 'Verhip', la customisation poussé de votre propre vélo." />
+			<rich:panel header="Recycle" style="float:right; margin: 5px"
+				headerClass="headerPanel">
+				<table>
+					<tr>
+						<td style="vertical-align: top;"><h:outputText
+								style="margin: 5px; font-size:14px;"
+								value="Le vélo avec une histoire, réutilisation d'un cadre existant. Après démontage puis sablage, une peinture 'epoxy' extrémement résistant en la couleur de votre choix donnera un aspect neuf à votre vélo. Ensuite, le cadre sera remonté avec les équipements sur mesure: pneus de différents coloris, sellerie et poignees cuir, vitesses dérailleur ou dans le moyeu, etc... Chaque vélo du programme est unique, complètement personnalisé." />
+						</td>
+						<td><h:graphicImage url="resources/img/recycle.jpg"
+								style="margin: 5px" /></td>
+					</tr>
+				</table>
+			</rich:panel>
+			<rich:panel header="Verhip !"
+				style="float:right; margin: 5px; vertical-align: stop;"
+				headerClass="headerPanel">
+				<table>
+					<tr>
+						<td><h:graphicImage url="resources/img/verhip1.jpg"
+								style="margin: 5px" /></td>
+						<td style="vertical-align: top;"><h:outputText
+								style="margin: 5px; font-size:14px"
+								value="Traduisons ça par Re-branché! Vous avez déjà un vélo, mais vous souhaitez le personnaliser? Il y a de nombreux possilbités de changer de 'look' de votre vélo: Allant des petites modifications comme le changement de couleur de pneus ou rajout d'un porte bagage à l'avant, à la refonte totale de votre vélo. Renseignez vous auprès du magasin VéloCafé Paris 15!" />
+						</td>
+						<td><h:graphicImage url="resources/img/verhip2.jpg" /></td>
+					</tr>
+				</table>
+			</rich:panel>
+			<rich:panel header="Cambio" style="float:right; margin: 5px"
+				headerClass="headerPanel">
+				<table>
+					<tr>
+						<td><h:outputText
+								style="width:50%; margin: 5px; font-size:14px"
+								value="Basé à Deventer au Pays Bas, Cambio est une entreprise de formation et de réintégration des méchaniciens dans le domaine du cycle. Une vingtaine de méchaniciens effectuent le (dé) montage des vélos à customiser ainsi que toute sorte de réparation" />
+						</td>
+						<td rowspan="2"><h:graphicImage
+								url="resources/img/cambio1.jpg" style="margin: 5px" /></td>
+					</tr>
+					<tr>
+						<td><h:graphicImage url="resources/img/cambio3.jpg"
+								style="margin: 5px" /> <h:graphicImage
+								url="resources/img/cambioLogo.jpg" style="margin: 5px" /></td>
+					</tr>
+				</table>
+			</rich:panel>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>
