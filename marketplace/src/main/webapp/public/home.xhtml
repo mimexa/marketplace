@@ -12,17 +12,17 @@
 	<h:form>
 		<table>
 			<tr>
-				<td colspan="2" style="overflow: hidden;"><h:outputText
+				<td colspan="2" style="position: relative; overflow: hidden;"><h:outputText
 						value="Réparation et vente de vélos de style"
-						style="background-color: white; color: #7f7f60; font-size: 40px; opacity: 0.7; width: 100%; border-radius: 25px" />
+						style="background-color: white; color: #7f7f60; font-size: 40px; opacity: 0.7; width: 100%; border-radius: 5px; position: absolute; left:0; top:10px; z-index:90" />
 					<p:carousel var="img" value="#{homeController.imgs}" numVisible="1"
 						effect="easeInStrong" autoPlayInterval="5000" circular="true"
 						style="border: none; background-color: transparent; "
 						itemStyle="background-color: transparent; border:none;">
 						<h:graphicImage url="#{img}"
-							style="border-radius: 25px; background: #CACABC; width: 500px;" />
+							style="border-radius: 5px; background: #CACABC; width: 500px;" />
 					</p:carousel> <h:graphicImage url="/resources/img/logo.png" width="100"
-						style="opacity:0.8 ; z-index:90" /></td>
+						style="opacity:0.7 ; z-index:90; position: absolute; bottom: 20px; left: 25px" /></td>
 				<td style="vertical-align: top;"><rich:panel
 						bodyClass="blanckBody" header="Réparations de vélos d'occasion"
 						headerClass="headerPanel"

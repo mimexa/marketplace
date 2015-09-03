@@ -12,11 +12,13 @@
 				<h:outputText value="#{messages['infosPratiques']}" />
 			</h:panelGroup>
 		</f:facet>
-		<rich:menuItem label="Nous trouver" styleClass="dropDownMenuItem"
+		<rich:menuItem label="#{messages['menu.nousTrouver']}"
+			styleClass="dropDownMenuItem"
 			action="#{bannerController.goTo('NOUS_TROUVER')}" />
 		<rich:menuSeparator
 			rendered="#{versionManagerController.isRendered('partenaires')}" />
-		<rich:menuItem label="Partenaires" styleClass="dropDownMenuItem"
+		<rich:menuItem label="#{messages['menu.partenaires']}"
+			styleClass="dropDownMenuItem"
 			action="#{bannerController.goTo('PARTENAIRES')}"
 			rendered="#{versionManagerController.isRendered('partenaires')}" />
 	</rich:dropDownMenu>

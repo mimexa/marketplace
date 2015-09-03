@@ -13,13 +13,14 @@
 				<h:outputText value="#{messages['surMesure']}" />
 			</h:panelGroup>
 		</f:facet>
-		<rich:menuItem label="Assembler un vélo à la carte"
+		<rich:menuItem label="#{messages['menu.assemblerVelo']}"
 			styleClass="dropDownMenuItem"
 			rendered="#{versionManagerController.isRendered('aLaCarte')}"
 			action="#{bannerController.goTo('ASSEMBLER_VELO')}" />
 		<rich:menuSeparator
 			rendered="#{versionManagerController.isRendered('aLaCarte')}" />
-		<rich:menuItem label="Nos réalisations" styleClass="dropDownMenuItem"
+		<rich:menuItem label="#{messages['menu.nosRealisations']}"
+			styleClass="dropDownMenuItem"
 			action="#{bannerController.goTo('REALISATIONS_ASSEMBLAGE')}" />
 	</rich:dropDownMenu>
 </ui:composition>

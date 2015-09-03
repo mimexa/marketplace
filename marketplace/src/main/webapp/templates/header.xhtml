@@ -8,8 +8,9 @@
 	xmlns:rich="http://richfaces.org/rich">
 	<h:form
 		style="width:100%; background: #CACABC; position: fixed; margin: 0px; text-align:center; z-index:100">
+		<h:outputText value="#{bannerController.doNothing()}" />
 		<rich:panel
-			style="width:75%; min-width:800px; margin: 0 auto; height:100px; background-color: #CACABC; border: none; padding: 0;"
+			style="width:75%; min-width:600px; margin: 0 auto; height:100px; background-color: #CACABC; border: none; padding: 0;"
 			bodyClass="headerBody" id="headerPanel">
 			<a4j:outputPanel
 				style="position:absolute; left:0; top:0; margin: 5px">
@@ -17,7 +18,6 @@
 					<h:graphicImage url="/resources/img/logo.png"
 						style="width: 90px; margin-bottom: 5px" id="logo" />
 				</h:link>
-				<rich:tooltip value="Mon commentaire" />
 			</a4j:outputPanel>
 			<ui:include src="view.xhtml" />
 			<div style="position: absolute; right: 0; bottom: 0">

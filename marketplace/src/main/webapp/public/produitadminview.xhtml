@@ -10,84 +10,98 @@
 <ui:composition>
 	<p:growl id="enregistrerMsg" showDetail="true" sticky="true" />
 	<rich:panel rendered="#{securityController.isAdminView()}"
-		header="Vue Administrateur"
+		header="#{messages['produit.vueAdministrateur']}"
 		style="width: #{produitController.ficheWidth}px; overflow: hidden"
 		id="adminForm">
 		<tag:img idProduit="#{produitController.form.idProduit}"
 			id="adminViewImg" />
 		<rich:tabPanel switchType="client" style="margin-top: 5px;">
-			<rich:tab header="Fiche" contentClass="tabFiche">
+			<rich:tab header="#{messages['produit.fiche']}"
+				contentClass="tabFiche">
 				<h:panelGrid columns="2">
-					<h:outputLabel for="etatInput" value="Etat : " />
+					<h:outputLabel for="etatInput"
+						value="#{messages['filtre.etat']} : " />
 					<h:selectOneMenu value="#{produitController.form.etat}"
-						id="etatInput">
+						id="etatInput" style="width:100%">
 						<f:selectItems var="etat"
 							value="#{staticController.etats.entrySet()}"
-							itemValue="#{etat.key}" itemLabel="#{etat.value}" />
+							itemValue="#{etat.key}" itemLabel="#{messages[etat.value]}" />
 					</h:selectOneMenu>
-					<h:outputLabel for="categorieInput" value="Categorie : " />
+					<h:outputLabel for="categorieInput"
+						value="#{messages['filtre.categories']} : " />
 					<h:selectOneMenu value="#{produitController.form.categorie}"
-						id="categorieInput">
+						id="categorieInput" style="width:100%">
 						<f:selectItems var="categorie"
 							value="#{staticController.categories.entrySet()}"
-							itemValue="#{categorie.key}" itemLabel="#{categorie.value}" />
+							itemValue="#{categorie.key}"
+							itemLabel="#{messages[categorie.value]}" />
 					</h:selectOneMenu>
-					<h:outputLabel for="sousCategorieInput" value="Sous categorie : " />
+					<h:outputLabel for="sousCategorieInput"
+						value="#{messages['produit.sousCategories']} : " />
 					<h:selectOneMenu value="#{produitController.form.sousCategorie}"
-						id="sousCategorieInput">
+						id="sousCategorieInput" style="width:100%">
 						<f:selectItems var="sousCategorie"
 							value="#{staticController.sousCategories.entrySet()}"
 							itemValue="#{sousCategorie.key}"
-							itemLabel="#{sousCategorie.value}" />
+							itemLabel="#{messages[sousCategorie.value]}" />
 					</h:selectOneMenu>
-					<h:outputLabel value="Titre" for="titreInput" />
+					<h:outputLabel value="#{messages['produit.titre']}"
+						for="titreInput" />
 					<h:inputText id="titreInput"
 						value="#{produitController.form.titre}" />
-					<h:outputLabel for="marqueInput" value="Marque : " />
+					<h:outputLabel for="marqueInput"
+						value="#{messages['produit.marque']} : " />
 					<h:selectOneMenu value="#{produitController.form.marque}"
-						id="marqueInput">
+						id="marqueInput" style="width:100%">
 						<f:selectItems var="marque"
 							value="#{staticController.marques.entrySet()}"
 							itemValue="#{marque.key}" itemLabel="#{marque.value}" />
 					</h:selectOneMenu>
-					<h:outputLabel value="Référence fabricant : "
+					<h:outputLabel value="#{messages['produit.referenceFabricant']} : "
 						for="referenceFabInput" />
 					<h:inputText id="referenceFabInput"
 						value="#{produitController.form.referenceFabricant}" />
-					<h:outputLabel value="Montant HT : " for="montantHtInput" />
+					<h:outputLabel value="#{messages['produit.montantHt']} : "
+						for="montantHtInput" />
 					<h:inputText id="montantHtInput"
 						value="#{produitController.form.montantHT}" />
-					<h:outputLabel value="Montant TVA : " for="montantTvaInput" />
+					<h:outputLabel value="#{messages['produit.montantTva']} : "
+						for="montantTvaInput" />
 					<h:inputText id="montantTvaInput"
 						value="#{produitController.form.montantTVA}" />
-					<h:outputLabel value="Référence technique : "
+					<h:outputLabel value="#{messages['produit.referenceTechnique']} : "
 						for="referenceTechniqueInput" />
 					<h:inputText id="referenceTechniqueInput"
 						value="#{produitController.form.referenceTechnique}" />
-					<h:outputLabel for="disponibiliteInput" value="Disponibilité : " />
+					<h:outputLabel for="disponibiliteInput"
+						value="#{messages['produit.disponibilite']} : " />
 					<h:selectOneMenu value="#{produitController.form.disponibilite}"
-						id="disponibiliteInput">
+						id="disponibiliteInput" style="width:100%">
 						<f:selectItems var="disponibilite"
 							value="#{staticController.disponibilites.entrySet()}"
 							itemValue="#{disponibilite.key}"
-							itemLabel="#{disponibilite.value}" />
+							itemLabel="#{messages[disponibilite.value]}" />
 					</h:selectOneMenu>
-					<h:outputLabel for="typeUsageInput" value="Type usage : " />
+					<h:outputLabel for="typeUsageInput"
+						value="#{messages['produit.typeUsage']} : " />
 					<h:selectOneMenu value="#{produitController.form.typeUsage}"
-						id="typeUsageInput">
+						id="typeUsageInput" style="width:100%">
 						<f:selectItems var="typeUsage"
 							value="#{staticController.typeUsages.entrySet()}"
-							itemValue="#{typeUsage.key}" itemLabel="#{typeUsage.value}" />
+							itemValue="#{typeUsage.key}"
+							itemLabel="#{messages[typeUsage.value]}" />
 					</h:selectOneMenu>
-					<h:outputLabel value="Diamètre roue : " for="diametreRoueInput" />
+					<h:outputLabel value="#{messages['produit.diametreRoue']} : "
+						for="diametreRoueInput" />
 					<h:inputText id="diametreRoueInput"
 						value="#{produitController.form.diametreRoue}" />
 					<h:outputLabel for="tailleCadreInput" value="Taille cadre : " />
 					<h:selectOneMenu value="#{produitController.form.tailleCadre}"
-						id="tailleCadreInput">
+						id="tailleCadreInput" style="width:100%">
 						<f:selectItems var="tailleCadre"
 							value="#{staticController.tailleCadres.entrySet()}"
-							itemValue="#{tailleCadre.key}" itemLabel="#{tailleCadre.value}" />
+							itemValue="#{tailleCadre.key}"
+							itemLabel="#{messages[tailleCadre.value]}" />
 					</h:selectOneMenu>
 					<h:outputLabel value="Cadre input : " for="dimensionCadreInput" />
 					<h:inputText id="dimensionCadreInput"
@@ -95,10 +109,11 @@
 					<h:outputLabel for="userSizeInput"
 						value="Taille de l'utilisateur : " />
 					<h:selectOneMenu value="#{produitController.form.userSize}"
-						id="userSizeInput">
+						id="userSizeInput" style="width:100%">
 						<f:selectItems var="userSize"
 							value="#{staticController.userSizes.entrySet()}"
-							itemValue="#{userSize.key}" itemLabel="#{userSize.value}" />
+							itemValue="#{userSize.key}"
+							itemLabel="#{messages[userSize.value]}" />
 					</h:selectOneMenu>
 					<h:outputLabel value="Style : " for="styleInput" />
 					<h:inputText id="styleInput"

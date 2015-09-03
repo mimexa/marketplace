@@ -13,10 +13,12 @@
 				<h:outputText value="#{messages['reparations']}" />
 			</h:panelGroup>
 		</f:facet>
-		<rich:menuItem label="Tarifs et devis" styleClass="dropDownMenuItem"
+		<rich:menuItem label="#{messages['menu.tarifsDevis']}"
+			styleClass="dropDownMenuItem"
 			action="#{bannerController.goTo('TARIFS_REPARATIONS')}" />
 		<rich:menuSeparator />
-		<rich:menuItem label="Nos réalisations" styleClass="dropDownMenuItem"
+		<rich:menuItem label="#{messages['menu.nosRealisations']}"
+			styleClass="dropDownMenuItem"
 			action="#{bannerController.goTo('REALISATIONS_REPARATIONS')}" />
 	</rich:dropDownMenu>
 </ui:composition>

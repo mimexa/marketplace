@@ -17,31 +17,33 @@
 			<rich:tab header="Fiche" contentClass="tabFiche">
 				<table>
 					<tag:outputTextField value="#{produitController.form.titre}"
-						label="titre" />
+						label="#{messages['produit.titre']}" />
 					<tag:outputTextField value="#{produitController.form.marque}"
-						label="Marque" />
+						label="#{messages['produit.marque']}" />
 					<tag:outputTextField
 						value="#{produitController.form.montantHT+produitController.form.montantTVA} € ttc"
-						label="Prix" />
+						label="#{messages['filtre.prix']}" />
 				</table>
 			</rich:tab>
-			<rich:tab header="Spécifications" contentClass="tabFiche">
+			<rich:tab header="#{messages['produit.specifications']}"
+				contentClass="tabFiche">
 				<table>
 					<tag:outputTextField
 						value="#{produitController.form.referenceFabricant}"
-						label="Reference fabricant" />
+						label="#{messages['produit.referenceFabricant']}" />
 					<tag:outputTextField
 						value="#{produitController.form.dateFabrication}"
-						label="Date fabrication" />
+						label="#{messages['produit.dateFabrication']}" />
 					<tag:outputTextField
 						value="#{produitController.form.referenceTechnique}"
-						label="Référence technique" />
+						label="#{messages['produit.referenceTechnique']}" />
 				</table>
 			</rich:tab>
-			<rich:tab header="Disponibilité" contentClass="tabFiche">
+			<rich:tab header="#{messages['produit.disponibilite']}"
+				contentClass="tabFiche">
 				<table>
 					<tag:outputTextField value="#{produitConrtoller.form.dateEntree}"
-						label="Date entrée" />
+						label="#{messages['produit.dateEntree']}" />
 				</table>
 			</rich:tab>
 		</rich:tabPanel>

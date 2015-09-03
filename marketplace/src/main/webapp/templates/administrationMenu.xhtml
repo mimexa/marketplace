@@ -11,21 +11,21 @@
 		rendered="#{securityController.isAdminView() and versionManagerController.isRendered('administrationMenu')}">
 		<f:facet name="label">
 			<h:panelGroup>
-				<h:outputText value="Administration" />
+				<h:outputText value="#{messages['menu.administration']}" />
 			</h:panelGroup>
 		</f:facet>
-		<rich:menuGroup label="Suivi des commandess"
+		<rich:menuGroup label="#{messages['menu.suiviCommandes']}"
 			styleClass="dropDownMenuItem">
-			<rich:menuItem label="Commandes en cours"
+			<rich:menuItem label="#{messages['menu.commandesCours']}"
 				styleClass="dropDownMenuItem">
 			</rich:menuItem>
-			<rich:menuItem label="Commandes archivées"
+			<rich:menuItem label="#{messages['menu.commandesArchives']}"
 				styleClass="dropDownMenuItem" />
 		</rich:menuGroup>
 		<rich:menuSeparator />
-		<rich:menuGroup label="Gestion des sotcks"
+		<rich:menuGroup label="#{messages['menu.gestionStocks']}"
 			styleClass="dropDownMenuItem" disabled="trues">
-			<rich:menuItem label="Enregistrer un nouveau produit"
+			<rich:menuItem label="#{messages['menu.enregistrerNouveauProduit']}"
 				styleClass="dropDownMenuItem"
 				action="#{bannerController.goTo('NOUVEAU_PRODUIT')}" />
 		</rich:menuGroup>

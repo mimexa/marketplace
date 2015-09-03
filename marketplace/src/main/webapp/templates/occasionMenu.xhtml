@@ -14,32 +14,40 @@
 				<h:outputText value="#{messages['occasions']}" />
 			</h:panelGroup>
 		</f:facet>
-		<rich:menuItem label="Tous les vélos" styleClass="dropDownMenuItem"
+		<rich:menuItem label="#{messages['menu.tousVelos']}"
+			styleClass="dropDownMenuItem"
 			action="#{bannerController.goTo('TOUS_VELOS_OCCASIONS')}" />
 		<rich:menuGroup label="Vélos" styleClass="dropDownMenuItem">
-			<rich:menuItem label="Vélos de ville" styleClass="dropDownMenuItem"
+			<rich:menuItem label="#{messages['menu.velosVille']}"
+				styleClass="dropDownMenuItem"
 				action="#{bannerController.goTo('VELOS_OCCASIONS_VILLE')}" />
-			<rich:menuItem label="Vélos électriques"
+			<rich:menuItem label="#{messages['menu.veloElectriques']}"
 				styleClass="dropDownMenuItem"
 				action="#{bannerController.goTo('VELOS_OCCASIONS_ELECTRIQUES')}" />
-			<rich:menuItem label="VTT" styleClass="dropDownMenuItem"
+			<rich:menuItem label="#{messages['menu.VTT']}"
+				styleClass="dropDownMenuItem"
 				action="#{bannerController.goTo('VELOS_OCCASIONS_VTT')}" />
-			<rich:menuItem label="Vélos polyvalents"
+			<rich:menuItem label="#{messages['menu.velosPolyvalents']}"
 				styleClass="dropDownMenuItem"
 				action="#{bannerController.goTo('VELOS_OCCASIONS_POLYVALENTS')}" />
-			<rich:menuItem label="Vélos pliables" styleClass="dropDownMenuItem"
+			<rich:menuItem label="#{messages['menu.velosPliables']}"
+				styleClass="dropDownMenuItem"
 				action="#{bannerController.goTo('VELOS_OCCASIONS_PLIABLES')}" />
 		</rich:menuGroup>
 		<rich:menuSeparator />
-		<rich:menuItem label="Tous les accessoires"
+		<rich:menuItem label="#{messages['menu.tousAccessoires']}"
 			styleClass="dropDownMenuItem" action="#{bannerController.goTo('')}" />
-		<rich:menuGroup label="Accessoires" styleClass="dropDownMenuItem"
+		<rich:menuGroup label="#{messages['menu.accessoires']}"
+			styleClass="dropDownMenuItem"
 			action="#{bannerController.goTo('TOUS_OCCASIONS_ACCESSOIRES')}">
-			<rich:menuItem label="Pièces détachées" styleClass="dropDownMenuItem"
+			<rich:menuItem label="#{messages['menu.piecesDetachees']}"
+				styleClass="dropDownMenuItem"
 				action="#{bannerController.goTo('PIECES_DETACHEES_OCCASIONS')}" />
-			<rich:menuItem label="Casques" styleClass="dropDownMenuItem"
+			<rich:menuItem label="#{messages['menu.casques']}"
+				styleClass="dropDownMenuItem"
 				action="#{bannerController.goTo('CASQUES_OCCASIONS')}" />
-			<rich:menuItem label="Vêtements" styleClass="dropDownMenuItem"
+			<rich:menuItem label="#{messages['menu.vetements']}"
+				styleClass="dropDownMenuItem"
 				action="#{bannerController.goTo('VETEMENTS_OCCASIONS')}" />
 		</rich:menuGroup>
 	</rich:dropDownMenu>

@@ -10,7 +10,7 @@
 	<rich:popupPanel id="loginPopup" modal="true" autosized="true"
 		resizeable="false">
 		<f:facet name="header">
-			<h:outputText value="Formulaire de connexion" />
+			<h:outputText value="#{messages['login.formulaireConnexion']}" />
 		</f:facet>
 		<f:facet name="controls">
 			<h:outputLink value="#"
@@ -20,16 +20,18 @@
 		</f:facet>
 		<h:form>
 			<h:panelGrid columns="2">
-				<h:outputLabel for="loginInput" value="Identifiant" />
+				<h:outputLabel for="loginInput"
+					value="#{messages['login.identifiant']}" />
 				<h:inputText id="loginInput" value="#{loginController.login}" />
-				<h:outputLabel for="passwordInput" value="Mot de passe" />
+				<h:outputLabel for="passwordInput"
+					value="#{messages['login.motDePasse']}" />
 				<h:inputSecret id="passwordInput"
 					value="#{loginController.password}" />
-				<h:commandButton value="Annuler">
+				<h:commandButton value="#{btn.annuler}">
 					<rich:componentControl target="loginPopup" operation="hide" />
 				</h:commandButton>
 				<h:commandButton action="#{loginController.connect}"
-					id="connexionBtn" value="Connexion" />
+					id="connexionBtn" value="#{messages['btn.connexion']}" />
 			</h:panelGrid>
 			<p:defaultCommand target="connexionBtn" />
 		</h:form>

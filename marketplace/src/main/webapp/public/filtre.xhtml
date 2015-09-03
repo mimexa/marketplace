@@ -25,72 +25,73 @@
 				<h:selectManyCheckbox value="#{filtreController.form.etat}"
 					layout="pageDirection">
 					<f:selectItems value="#{staticController.etats.entrySet()}"
-						var="etat" itemLabel="#{etat.value}" itemValue="#{etat.key}" />
+						var="etat" itemLabel="#{messages[etat.value]}"
+						itemValue="#{etat.key}" />
 					<a4j:ajax render="@form" />
 				</h:selectManyCheckbox>
 			</rich:accordionItem>
-			<rich:accordionItem header="Tailles cadres">
+			<rich:accordionItem header="#{messages['filtre.taillesCadres']}">
 				<h:selectManyCheckbox value="#{filtreController.form.tailleCadre}"
 					layout="pageDirection">
 					<f:selectItems value="#{staticController.tailleCadres.entrySet()}"
-						var="tailleCadre" itemLabel="#{tailleCadre.value}"
+						var="tailleCadre" itemLabel="#{messages[tailleCadre.value]}"
 						itemValue="#{tailleCadre.key}" />
 					<a4j:ajax render="@form" />
 				</h:selectManyCheckbox>
 			</rich:accordionItem>
-			<rich:accordionItem header="Disponibilité">
+			<rich:accordionItem header="#{messages['filtre.disponibilite']}">
 				<h:selectManyCheckbox value="#{filtreController.form.disponibilite}"
 					layout="pageDirection">
 					<f:selectItems
 						value="#{staticController.disponibilites.entrySet()}"
-						var="disponibilite" itemLabel="#{disponibilite.value}"
+						var="disponibilite" itemLabel="#{messages[disponibilite.value]}"
 						itemValue="#{disponibilite.key}" />
 					<a4j:ajax render="@form" />
 				</h:selectManyCheckbox>
 			</rich:accordionItem>
-			<rich:accordionItem header="Homme/Femme">
+			<rich:accordionItem header="#{messages['filtre.homme']}">
 				<h:selectManyCheckbox value="#{filtreController.form.typeUsage}"
 					layout="pageDirection">
 					<f:selectItems value="#{staticController.typeUsages.entrySet()}"
-						var="typeUsage" itemLabel="#{typeUsage.value}"
+						var="typeUsage" itemLabel="#{messages[typeUsage.value]}"
 						itemValue="#{typeUsage.key}" />
 					<a4j:ajax render="@form" />
 				</h:selectManyCheckbox>
 			</rich:accordionItem>
-			<rich:accordionItem header="Taille cycliste">
+			<rich:accordionItem header="#{messages['filtre.tailleCycliste']}">
 				<h:selectManyCheckbox value="#{filtreController.form.userSize}"
 					layout="pageDirection">
 					<f:selectItems value="#{staticController.userSizes.entrySet()}"
-						var="userSize" itemLabel="#{userSize.value}"
+						var="userSize" itemLabel="#{messages[userSize.value]}"
 						itemValue="#{userSize.key}" />
 					<a4j:ajax render="@form" />
 				</h:selectManyCheckbox>
 			</rich:accordionItem>
-			<rich:accordionItem header="Prix">
+			<rich:accordionItem header="#{messages['filtre.prix']}">
 				<h:panelGrid columns="2">
 					<tag:inputTextField id="prixMinimum"
 						value="#{filtreController.form.prixMinimum}"
-						label="Prix minimum €" />
+						label="#{messages['filtre.prixMinimum']}" />
 					<tag:inputTextField id="prixMaximum"
 						value="#{filtreController.form.prixMaximum}"
-						label="Prix maximum €" />
+						label="#{messages['filtre.prixMaximum']}" />
 				</h:panelGrid>
 			</rich:accordionItem>
-			<rich:accordionItem header="Catégories">
+			<rich:accordionItem header="#{messages['filtre.categories']}">
 				<p:tree value="#{filtreController.form.categoriesTree}" var="pair"
 					selectionMode="checkbox"
 					selection="#{filtreController.form.selection}"
 					style="width: #{filtreController.treeWidth}px">
 					<p:treeNode>
-						<h:outputText value="#{pair.label}" />
+						<h:outputText value="#{messages[pair.label]}" />
 					</p:treeNode>
 				</p:tree>
 			</rich:accordionItem>
 		</rich:accordion>
 		<rich:panel style="text-align: center;">
 			<a4j:commandButton action="#{filtreController.reset}"
-				value="Réinitialiser les filtres" render="@form" />
+				value="#{messages['filtre.reinitialiser']}" render="@form" />
 		</rich:panel>
-	</a4j:outputPanel> 
+	</a4j:outputPanel>
 </ui:composition>
 </html>

@@ -171,4 +171,8 @@ public class BannerController implements Serializable {
 		}
 	}
 
+	public String doNothing() {
+		return null;
+	}
+
 }

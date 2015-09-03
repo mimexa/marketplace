@@ -53,11 +53,11 @@ public interface Constantes {
 	}
 
 	interface UserSize {
-		String US150_160 = "US.150.160";
-		String US160_170 = "US.160.170";
-		String US170_180 = "US.170.180";
-		String US180_190 = "US.180.190";
-		String US190 = "US.190";
+		String US150_160 = "US150_160";
+		String US160_170 = "US160_170";
+		String US170_180 = "US170_180";
+		String US180_190 = "US180_190";
+		String US190 = "US190";
 	}
 
 	interface TypeUsage {

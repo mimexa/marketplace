@@ -195,7 +195,7 @@ public class FiltreForm {
 
 	public void initialiseEmptyProperties() {
 		if (CommonUtils.isNullOrEmpty(marque)) {
-			marque = StaticController.Consts.marques.keySet();
+			marque.addAll(StaticController.Consts.marques.keySet());
 		}
 		if (anneeDebut < 0) {
 			anneeDebut = Consts.anneeMinimum;
@@ -210,22 +210,22 @@ public class FiltreForm {
 			prixMaximum = Consts.prixMaximum;
 		}
 		if (CommonUtils.isNullOrEmpty(etat)) {
-			etat = StaticController.Consts.etats.keySet();
+			etat.addAll(StaticController.Consts.etats.keySet());
 		}
 		if (CommonUtils.isNullOrEmpty(categoriesTree)) {
 			categoriesTree = newTreeNode();
 		}
 		if (CommonUtils.isNullOrEmpty(tailleCadre)) {
-			tailleCadre = StaticController.Consts.tailleCadres.keySet();
+			tailleCadre.addAll(StaticController.Consts.tailleCadres.keySet());
 		}
 		if (CommonUtils.isNullOrEmpty(disponibilite)) {
-			disponibilite = StaticController.Consts.disponibilites.keySet();
+			disponibilite.addAll(StaticController.Consts.disponibilites.keySet());
 		}
 		if (CommonUtils.isNullOrEmpty(userSize)) {
-			userSize = StaticController.Consts.userSizes.keySet();
+			userSize.addAll(StaticController.Consts.userSizes.keySet());
 		}
 		if (CommonUtils.isNullOrEmpty(typeUsage)) {
-			typeUsage = StaticController.Consts.typeUsages.keySet();
+			typeUsage.addAll(StaticController.Consts.typeUsages.keySet());
 		}
 	}
 
@@ -237,7 +237,8 @@ public class FiltreForm {
 				Set<String> values = arg.getValues();
 				if (CommonUtils.isNotNullOrEmpty(param) && CommonUtils.isNotNullOrEmpty(values)) {
 					if (Props.ETAT.equals(param)) {
-						etat = values;
+						etat.clear();
+						etat.addAll(values);
 					} else if (Props.CATEGORIE.equals(param)) {
 						for (String value : values) {
 							for (TreeNode node : categoriesTree.getChildren()) {

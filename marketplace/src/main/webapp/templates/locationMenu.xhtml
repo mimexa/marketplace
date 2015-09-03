@@ -13,18 +13,20 @@
 				<h:outputText value="#{messages['location']}" />
 			</h:panelGroup>
 		</f:facet>
-		<rich:menuItem label="Réserver un vélo" styleClass="dropDownMenuItem"
+		<rich:menuItem label="#{messages['menu.reserverVelo']}"
+			styleClass="dropDownMenuItem"
 			action="#{bannerController.goTo('RESERVER_VELO')}" />
 		<rich:menuSeparator />
-		<rich:menuItem label="Réserver groupe (plus de 10 participants)"
+		<rich:menuItem label="#{messages['menu.reserverGroupe']}"
 			styleClass="dropDownMenuItem"
 			action="#{bannerController.goTo('RESERVER_GROUPE')}" />
 		<rich:menuSeparator />
-		<rich:menuItem label="Professionnels du tourisme"
+		<rich:menuItem label="#{messages['menu.reserverTourisme']}"
 			styleClass="dropDownMenuItem"
 			action="#{bannerController.goTo('TOURISME_PRO')}" />
 		<rich:menuSeparator />
-		<rich:menuItem label="Livre d'or" styleClass="dropDownMenuItem"
+		<rich:menuItem label="#{messages['menu.livreOr']}"
+			styleClass="dropDownMenuItem"
 			action="#{bannerController.goTo('LIVRE_OR')}" />
 	</rich:dropDownMenu>
 </ui:composition>
