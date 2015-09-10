@@ -6,6 +6,7 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -16,6 +17,7 @@ import javax.sql.rowset.serial.SerialBlob;
 import javax.sql.rowset.serial.SerialException;
 
 import paris.velocafe.marketplace.domain.Args;
+import paris.velocafe.marketplace.utils.Constantes.Marque;
 
 public class CommonUtils {
 
@@ -223,6 +225,14 @@ public class CommonUtils {
 			e.printStackTrace();
 			return null;
 		}
+	}
+
+	public static <E> Map<String, String> collectionToMap(final E[] collection) {
+		Map<String, String> map = new HashMap<String, String>();
+		for (E e : collection) {
+			map.put(e.toString(), e.toString());
+		}
+		return map;
 	}
 
 	/**

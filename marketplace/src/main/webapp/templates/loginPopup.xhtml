@@ -27,7 +27,7 @@
 					value="#{messages['login.motDePasse']}" />
 				<h:inputSecret id="passwordInput"
 					value="#{loginController.password}" />
-				<h:commandButton value="#{btn.annuler}">
+				<h:commandButton value="#{messages['btn.annuler']}">
 					<rich:componentControl target="loginPopup" operation="hide" />
 				</h:commandButton>
 				<h:commandButton action="#{loginController.connect}"

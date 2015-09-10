@@ -1,11 +1,13 @@
 package paris.velocafe.marketplace.views;
 
+import static paris.velocafe.marketplace.utils.Constantes.Binaire.*;
 import static paris.velocafe.marketplace.utils.Constantes.Categorie.*;
 import static paris.velocafe.marketplace.utils.Constantes.Disponibilite.*;
 import static paris.velocafe.marketplace.utils.Constantes.Etat.*;
 import static paris.velocafe.marketplace.utils.Constantes.SousCategorie.*;
 import static paris.velocafe.marketplace.utils.Constantes.TailleCadre.*;
 import static paris.velocafe.marketplace.utils.Constantes.TypeUsage.*;
+import static paris.velocafe.marketplace.utils.Constantes.*;
 import static paris.velocafe.marketplace.utils.Constantes.UserSize.*;
 
 import java.io.Serializable;
@@ -15,7 +17,7 @@ import java.util.Map;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 
-import paris.velocafe.marketplace.utils.Constantes;
+import paris.velocafe.marketplace.utils.CommonUtils;
 import paris.velocafe.marketplace.utils.Constantes.Marque;
 
 /**
@@ -31,6 +33,10 @@ public class StaticController implements Serializable {
 
 	public Map<String, String> getEtats() {
 		return Consts.etats;
+	}
+
+	public Map<String, String> getBinaire() {
+		return Consts.binaire;
 	}
 
 	public Map<String, String> getEtatsTous() {
@@ -86,6 +92,12 @@ public class StaticController implements Serializable {
 	}
 
 	public static class Consts {
+		public static final Map<String, String> binaire = new HashMap<String, String>();
+		static {
+			binaire.put("O", OUI);
+			binaire.put("N", NON);
+		}
+
 		public static final String tousLabel = "-- Tous --";
 		public static final String tousValue = "TOUS";
 		public static final Map<String, String> etats = new HashMap<String, String>();
@@ -154,12 +166,7 @@ public class StaticController implements Serializable {
 			userSizesTous.put(tousValue, tousLabel);
 			userSizesTous.putAll(userSizes);
 		}
-		public static final Map<String, String> marques = new HashMap<String, String>();
-		static {
-			for (Constantes.Marque marque : Marque.values()) {
-				marques.put(marque.toString(), marque.toString());
-			}
-		}
+		public static final Map<String, String> marques = CommonUtils.collectionToMap(Marque.values());
 		public static final Map<String, String> marquesTous = new HashMap<String, String>();
 		static {
 			marquesTous.put(tousValue, tousLabel);
@@ -188,6 +195,24 @@ public class StaticController implements Serializable {
 			typeUsagesTous.put(tousValue, tousLabel);
 			typeUsagesTous.putAll(typeUsages);
 		}
+		public static final Map<String, String> velos = CommonUtils.collectionToMap(Velos.values());
+		public static final Map<String, String> piecesDetachees = CommonUtils.collectionToMap(PiecesDetachees.values());
+		public static final Map<String, String> accessoires = CommonUtils.collectionToMap(Accessoires.values());
+		public static final Map<String, String> lumieres = CommonUtils.collectionToMap(Lumiere.values());
+		public static final Map<String, String> pneus = CommonUtils.collectionToMap(Pneu.values());
+		public static final Map<String, String> selles = CommonUtils.collectionToMap(Selle.values());
+		public static final Map<String, String> freins = CommonUtils.collectionToMap(Frein.values());
+		public static final Map<String, String> directions = CommonUtils.collectionToMap(Direction.values());
+		public static final Map<String, String> transmissions = CommonUtils.collectionToMap(Transmission.values());
+		public static final Map<String, String> sonnettes = CommonUtils.collectionToMap(Sonnette.values());
+		public static final Map<String, String> casques = CommonUtils.collectionToMap(Casque.values());
+		public static final Map<String, String> cadenas = CommonUtils.collectionToMap(Cadenas.values());
+		public static final Map<String, String> saccoches = CommonUtils.collectionToMap(Saccoche.values());
+		public static final Map<String, String> ordinateur = CommonUtils.collectionToMap(Ordinateur.values());
+		public static final Map<String, String> pompes = CommonUtils.collectionToMap(Pompe.values());
+		public static final Map<String, String> panier = CommonUtils.collectionToMap(Panier.values());
+		public static final Map<String, String> couleurs = CommonUtils.collectionToMap(Couleur.values());
+
 	}
 
 }

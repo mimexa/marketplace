@@ -28,6 +28,7 @@
 	<servlet-mapping>
 		<servlet-name>Faces Servlet</servlet-name>
 		<url-pattern>*.xhtml</url-pattern>
+		<url-pattern>*.html</url-pattern>
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>Resource Servlet</servlet-name>

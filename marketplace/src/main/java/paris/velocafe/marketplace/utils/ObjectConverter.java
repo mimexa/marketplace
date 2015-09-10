@@ -120,7 +120,7 @@ public class ObjectConverter {
 		produit.setMontantTVA(produitForm.getMontantTVA());
 		produit.setReferenceFabricant(produitForm.getReferenceFabricant());
 		produit.setReferenceTechnique(produitForm.getReferenceTechnique());
-		produit.setSousCategorie(produitForm.getReferenceTechnique());
+		produit.setSousCategorie(produitForm.getSousCategorie());
 		produit.setTitre(produitForm.getTitre());
 		produit.setTypeUsage(produitForm.getTypeUsage()); // TYP_USAGE VARCHAR(3)
 		produit.setDiametreRoue(produitForm.getDiametreRoue()); // DIAM_ROUE VARCHAR(5)

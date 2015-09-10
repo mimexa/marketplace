@@ -18,138 +18,167 @@
 		<rich:tabPanel switchType="client" style="margin-top: 5px;">
 			<rich:tab header="#{messages['produit.fiche']}"
 				contentClass="tabFiche">
-				<h:panelGrid columns="2">
-					<h:outputLabel for="etatInput"
-						value="#{messages['filtre.etat']} : " />
-					<h:selectOneMenu value="#{produitController.form.etat}"
-						id="etatInput" style="width:100%">
-						<f:selectItems var="etat"
-							value="#{staticController.etats.entrySet()}"
-							itemValue="#{etat.key}" itemLabel="#{messages[etat.value]}" />
-					</h:selectOneMenu>
-					<h:outputLabel for="categorieInput"
-						value="#{messages['filtre.categories']} : " />
-					<h:selectOneMenu value="#{produitController.form.categorie}"
-						id="categorieInput" style="width:100%">
-						<f:selectItems var="categorie"
-							value="#{staticController.categories.entrySet()}"
-							itemValue="#{categorie.key}"
-							itemLabel="#{messages[categorie.value]}" />
-					</h:selectOneMenu>
-					<h:outputLabel for="sousCategorieInput"
-						value="#{messages['produit.sousCategories']} : " />
-					<h:selectOneMenu value="#{produitController.form.sousCategorie}"
-						id="sousCategorieInput" style="width:100%">
-						<f:selectItems var="sousCategorie"
-							value="#{staticController.sousCategories.entrySet()}"
-							itemValue="#{sousCategorie.key}"
-							itemLabel="#{messages[sousCategorie.value]}" />
-					</h:selectOneMenu>
-					<h:outputLabel value="#{messages['produit.titre']}"
-						for="titreInput" />
-					<h:inputText id="titreInput"
-						value="#{produitController.form.titre}" />
-					<h:outputLabel for="marqueInput"
-						value="#{messages['produit.marque']} : " />
-					<h:selectOneMenu value="#{produitController.form.marque}"
-						id="marqueInput" style="width:100%">
-						<f:selectItems var="marque"
-							value="#{staticController.marques.entrySet()}"
-							itemValue="#{marque.key}" itemLabel="#{marque.value}" />
-					</h:selectOneMenu>
-					<h:outputLabel value="#{messages['produit.referenceFabricant']} : "
-						for="referenceFabInput" />
-					<h:inputText id="referenceFabInput"
-						value="#{produitController.form.referenceFabricant}" />
-					<h:outputLabel value="#{messages['produit.montantHt']} : "
-						for="montantHtInput" />
-					<h:inputText id="montantHtInput"
-						value="#{produitController.form.montantHT}" />
-					<h:outputLabel value="#{messages['produit.montantTva']} : "
-						for="montantTvaInput" />
-					<h:inputText id="montantTvaInput"
-						value="#{produitController.form.montantTVA}" />
-					<h:outputLabel value="#{messages['produit.referenceTechnique']} : "
-						for="referenceTechniqueInput" />
-					<h:inputText id="referenceTechniqueInput"
-						value="#{produitController.form.referenceTechnique}" />
-					<h:outputLabel for="disponibiliteInput"
-						value="#{messages['produit.disponibilite']} : " />
-					<h:selectOneMenu value="#{produitController.form.disponibilite}"
-						id="disponibiliteInput" style="width:100%">
-						<f:selectItems var="disponibilite"
-							value="#{staticController.disponibilites.entrySet()}"
-							itemValue="#{disponibilite.key}"
-							itemLabel="#{messages[disponibilite.value]}" />
-					</h:selectOneMenu>
-					<h:outputLabel for="typeUsageInput"
-						value="#{messages['produit.typeUsage']} : " />
-					<h:selectOneMenu value="#{produitController.form.typeUsage}"
-						id="typeUsageInput" style="width:100%">
-						<f:selectItems var="typeUsage"
-							value="#{staticController.typeUsages.entrySet()}"
-							itemValue="#{typeUsage.key}"
-							itemLabel="#{messages[typeUsage.value]}" />
-					</h:selectOneMenu>
-					<h:outputLabel value="#{messages['produit.diametreRoue']} : "
-						for="diametreRoueInput" />
-					<h:inputText id="diametreRoueInput"
-						value="#{produitController.form.diametreRoue}" />
-					<h:outputLabel for="tailleCadreInput" value="Taille cadre : " />
-					<h:selectOneMenu value="#{produitController.form.tailleCadre}"
-						id="tailleCadreInput" style="width:100%">
-						<f:selectItems var="tailleCadre"
-							value="#{staticController.tailleCadres.entrySet()}"
-							itemValue="#{tailleCadre.key}"
-							itemLabel="#{messages[tailleCadre.value]}" />
-					</h:selectOneMenu>
-					<h:outputLabel value="Cadre input : " for="dimensionCadreInput" />
-					<h:inputText id="dimensionCadreInput"
-						value="#{produitController.form.dimensionCadre}" />
-					<h:outputLabel for="userSizeInput"
-						value="Taille de l'utilisateur : " />
-					<h:selectOneMenu value="#{produitController.form.userSize}"
-						id="userSizeInput" style="width:100%">
-						<f:selectItems var="userSize"
-							value="#{staticController.userSizes.entrySet()}"
-							itemValue="#{userSize.key}"
-							itemLabel="#{messages[userSize.value]}" />
-					</h:selectOneMenu>
-					<h:outputLabel value="Style : " for="styleInput" />
-					<h:inputText id="styleInput"
-						value="#{produitController.form.style}" />
-					<h:outputLabel value="Option 1 : " for="option1Input" />
-					<h:inputText id="option1Input"
-						value="#{produitController.form.option1}" />
-					<h:outputLabel value="Option 2 : " for="option2Input" />
-					<h:inputText id="option2Input"
-						value="#{produitController.form.option2}" />
-					<h:outputLabel value="Option 3 : " for="option3Input" />
-					<h:inputText id="option3Input"
-						value="#{produitController.form.option3}" />
-					<h:outputLabel value="Catégorie taille : " for="sizecategoryInput" />
-					<h:inputText id="sizecategoryInput"
-						value="#{produitController.form.sizecategory}" />
-					<h:outputLabel value="Catégorie poids : " for="weightCategoryInput" />
-					<h:inputText id="weightCategoryInput"
-						value="#{produitController.form.weightCategory}" />
-					<h:outputLabel value="Catégorie packaging : "
-						for="packageCategoryInput" />
-					<h:inputText id="packageCategoryInput"
-						value="#{produitController.form.packageCategory}" />
-					<h:outputLabel value="Option stockage : " for="stockOptionInput" />
-					<h:inputText id="stockOptionInput"
-						value="#{produitController.form.stockOption}" />
-					<h:outputLabel value="Couleur : " for="colorInput" />
-					<h:inputText id="colorInput"
-						value="#{produitController.form.color}" />
-					<h:outputLabel value="Suspension siège : "
-						for="suspensionSeatInput" />
-					<h:inputText id="suspensionSeatInput"
-						value="#{produitController.form.suspensionSeat}" />
-					<h:outputLabel value="Entrée facile : " for="easyEntryInput" />
-					<h:inputText id="easyEntryInput"
-						value="#{produitController.form.easyEntry}" />
+				<h:panelGrid columns="2" columnClasses="columns"
+					rowClasses="columns">
+					<h:panelGrid columns="2" columnClasses="columns">
+						<h:outputLabel for="etatInput"
+							value="#{messages['filtre.etat']} : " />
+						<h:selectOneMenu value="#{produitController.form.etat}"
+							id="etatInput" style="width:100%">
+							<f:selectItems var="etat"
+								value="#{staticController.etats.entrySet()}"
+								itemValue="#{etat.key}" itemLabel="#{messages[etat.value]}" />
+						</h:selectOneMenu>
+						<h:outputLabel for="categorieInput"
+							value="#{messages['filtre.categories']} : " />
+						<h:selectOneMenu value="#{produitController.form.categorie}"
+							id="categorieInput" style="width:100%">
+							<f:selectItems var="categorie"
+								value="#{staticController.categories.entrySet()}"
+								itemValue="#{categorie.key}"
+								itemLabel="#{messages[categorie.value]}" />
+							<a4j:ajax render="@form" />
+						</h:selectOneMenu>
+						<h:outputLabel for="sousCategorieInput"
+							value="#{messages['produit.sousCategories']} : " />
+						<h:selectOneMenu value="#{produitController.form.sousCategorie}"
+							id="sousCategorieInput" style="width:100%">
+							<f:selectItems var="sousCategorie"
+								value="#{staticController.sousCategories.entrySet()}"
+								itemValue="#{sousCategorie.key}"
+								itemLabel="#{messages[sousCategorie.value]}" />
+						</h:selectOneMenu>
+						<h:outputLabel value="#{messages['produit.titre']}"
+							for="titreInput" />
+						<h:inputText id="titreInput"
+							value="#{produitController.form.titre}" />
+						<h:outputLabel for="marqueInput"
+							value="#{messages['produit.marque']} : " />
+						<h:selectOneMenu value="#{produitController.form.marque}"
+							id="marqueInput" style="width:100%">
+							<f:selectItems var="marque"
+								value="#{staticController.marques.entrySet()}"
+								itemValue="#{marque.key}" itemLabel="#{marque.value}" />
+						</h:selectOneMenu>
+						<h:outputLabel
+							value="#{messages['produit.referenceFabricant']} : "
+							for="referenceFabInput" />
+						<h:inputText id="referenceFabInput"
+							value="#{produitController.form.referenceFabricant}" />
+						<h:outputLabel value="#{messages['produit.montantHt']} : "
+							for="montantHtInput" />
+						<h:inputText id="montantHtInput"
+							value="#{produitController.form.montantHT}" />
+						<h:outputLabel value="#{messages['produit.montantTva']} : "
+							for="montantTvaInput" />
+						<h:inputText id="montantTvaInput"
+							value="#{produitController.form.montantTVA}" />
+						<h:outputLabel
+							value="#{messages['produit.referenceTechnique']} : "
+							for="referenceTechniqueInput" />
+						<h:inputText id="referenceTechniqueInput"
+							value="#{produitController.form.referenceTechnique}" />
+						<h:outputLabel for="disponibiliteInput"
+							value="#{messages['produit.disponibilite']} : " />
+						<h:selectOneMenu value="#{produitController.form.disponibilite}"
+							id="disponibiliteInput" style="width:100%">
+							<f:selectItems var="disponibilite"
+								value="#{staticController.disponibilites.entrySet()}"
+								itemValue="#{disponibilite.key}"
+								itemLabel="#{messages[disponibilite.value]}" />
+						</h:selectOneMenu>
+						<h:outputLabel value="Style : " for="styleInput" />
+						<h:inputText id="styleInput"
+							value="#{produitController.form.style}" />
+						<h:outputLabel value="Option 1 : " for="option1Input" />
+						<h:inputText id="option1Input"
+							value="#{produitController.form.option1}" />
+						<h:outputLabel value="Option 2 : " for="option2Input" />
+						<h:inputText id="option2Input"
+							value="#{produitController.form.option2}" />
+						<h:outputLabel value="Option 3 : " for="option3Input" />
+						<h:inputText id="option3Input"
+							value="#{produitController.form.option3}" />
+						<h:outputLabel value="Catégorie taille : " for="sizecategoryInput" />
+						<h:inputText id="sizecategoryInput"
+							value="#{produitController.form.sizecategory}" />
+						<h:outputLabel value="Catégorie poids : "
+							for="weightCategoryInput" />
+						<h:inputText id="weightCategoryInput"
+							value="#{produitController.form.weightCategory}" />
+						<h:outputLabel value="Catégorie packaging : "
+							for="packageCategoryInput" />
+						<h:inputText id="packageCategoryInput"
+							value="#{produitController.form.packageCategory}" />
+						<h:outputLabel value="Option stockage : " for="stockOptionInput" />
+						<h:inputText id="stockOptionInput"
+							value="#{produitController.form.stockOption}" />
+						<h:outputLabel value="Couleur : " for="colorInput" />
+						<h:inputText id="colorInput"
+							value="#{produitController.form.color}" />
+					</h:panelGrid>
+					<h:panelGrid columns="2" columnClasses="columns">
+						<h:outputLabel for="typeUsageInput"
+							value="#{messages['produit.typeUsage']} : "
+							rendered="#{produitController.isVelo}" />
+						<h:selectOneMenu value="#{produitController.form.typeUsage}"
+							id="typeUsageInput" style="width:100%"
+							rendered="#{produitController.isVelo}">
+							<f:selectItems var="typeUsage"
+								value="#{staticController.typeUsages.entrySet()}"
+								itemValue="#{typeUsage.key}"
+								itemLabel="#{messages[typeUsage.value]}" />
+						</h:selectOneMenu>
+						<h:outputLabel value="#{messages['produit.diametreRoue']} : "
+							for="diametreRoueInput" rendered="#{produitController.isVelo}" />
+						<h:inputText id="diametreRoueInput"
+							value="#{produitController.form.diametreRoue}"
+							rendered="#{produitController.isVelo}" />
+						<h:outputLabel for="tailleCadreInput" value="Taille cadre : "
+							rendered="#{produitController.isVelo}" />
+						<h:selectOneMenu value="#{produitController.form.tailleCadre}"
+							id="tailleCadreInput" style="width:100%"
+							rendered="#{produitController.isVelo}">
+							<f:selectItems var="tailleCadre"
+								value="#{staticController.tailleCadres.entrySet()}"
+								itemValue="#{tailleCadre.key}"
+								itemLabel="#{messages[tailleCadre.value]}" />
+						</h:selectOneMenu>
+						<h:outputLabel value="Cadre input : " for="dimensionCadreInput"
+							rendered="#{produitController.isVelo}" />
+						<h:inputText id="dimensionCadreInput"
+							value="#{produitController.form.dimensionCadre}"
+							rendered="#{produitController.isVelo}" />
+						<h:outputLabel for="userSizeInput"
+							value="Taille de l'utilisateur : "
+							rendered="#{produitController.isVelo}" />
+						<h:selectOneMenu value="#{produitController.form.userSize}"
+							id="userSizeInput" style="width:100%"
+							rendered="#{produitController.isVelo}">
+							<f:selectItems var="userSize"
+								value="#{staticController.userSizes.entrySet()}"
+								itemValue="#{userSize.key}"
+								itemLabel="#{messages[userSize.value]}" />
+						</h:selectOneMenu>
+						<h:outputLabel value="Suspension siège : "
+							for="suspensionSeatInput" rendered="#{produitController.isVelo}" />
+						<h:selectOneRadio id="suspensionSeatInput"
+							value="#{produitController.form.suspensionSeat}"
+							rendered="#{produitController.isVelo}">
+							<f:selectItems value="#{staticController.binaire.entrySet()}"
+								var="binaire" itemLabel="#{messages[binaire.value]}"
+								itemValue="#{binaire.key}" />
+						</h:selectOneRadio>
+						<h:outputLabel value="Entrée facile : " for="easyEntryInput"
+							rendered="#{produitController.isVelo}" />
+						<h:selectOneRadio id="easyEntryInput"
+							rendered="#{produitController.isVelo}"
+							value="#{produitController.form.easyEntry}">
+							<f:selectItems value="#{staticController.binaire.entrySet()}"
+								var="binaire" itemLabel="#{messages[binaire.value]}"
+								itemValue="#{binaire.key}" />
+						</h:selectOneRadio>
+					</h:panelGrid>
 				</h:panelGrid>
 				<p:commandButton value="Reset"
 					actionListener="#{produitController.reset()}" update="adminForm"

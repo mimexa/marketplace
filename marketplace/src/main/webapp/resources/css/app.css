@@ -123,3 +123,7 @@ a {
 	background-color: #f1f1f1;
 	margin-top: 4px;
 }
+
+.ui-carousel-header-title {
+	width: 100%;
+}

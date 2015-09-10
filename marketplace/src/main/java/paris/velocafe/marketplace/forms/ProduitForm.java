@@ -2,7 +2,12 @@ package paris.velocafe.marketplace.forms;
 
 import java.util.Date;
 
+import paris.velocafe.marketplace.utils.Constantes;
+
 public class ProduitForm {
+
+	private static final String OUI = "O";
+	private static final String NON = "N";
 
 	private Long idProduit;
 	private String titre;
@@ -34,9 +39,19 @@ public class ProduitForm {
 	private String color; // ADD COLUMN `COLOR` VARCHAR(10) NULL COMMENT '' AFTER `STOCK_OPTION`,
 	private String suspensionSeat; // ADD COLUMN `SUSP_SEAT` VARCHAR(1) NULL COMMENT '' AFTER `COLOR`,
 	private String easyEntry; // ADD COLUMN `EASY_ENTRY` VARCHAR(1) NULL COMMENT '' AFTER `SUSP_SEAT`;
+	private String afficherProduit; // TODO Créer en bdd
+	private String sousSousCategorie; // TODO Créer en bdd
 
 	public String getDisponibilite() {
 		return disponibilite;
+	}
+
+	public String getAfficherProduit() {
+		return afficherProduit;
+	}
+
+	public void setAfficherProduit(String afficherProduit) {
+		this.afficherProduit = afficherProduit;
 	}
 
 	public void setDisponibilite(String disponibilite) {
@@ -172,6 +187,18 @@ public class ProduitForm {
 	}
 
 	public ProduitForm() {
+		etat = Constantes.Etat.NEUF;
+		categorie = Constantes.Categorie.VELO;
+		sousCategorie = Constantes.SousCategorie.VILLE;
+		afficherProduit = OUI;
+		marque = Constantes.Marque.Autre.toString();
+		disponibilite = Constantes.Disponibilite.STOCK;
+		typeUsage = Constantes.TypeUsage.MIX;
+		tailleCadre = Constantes.TailleCadre.L;
+		userSize = Constantes.UserSize.US170_180;
+		suspensionSeat = NON;
+		easyEntry = NON;
+		afficherProduit = OUI;
 	}
 
 	public ProduitForm(Long idProduit) {
@@ -252,6 +279,14 @@ public class ProduitForm {
 
 	public String getEtat() {
 		return etat;
+	}
+
+	public String getSousSousCategorie() {
+		return sousSousCategorie;
+	}
+
+	public void setSousSousCategorie(String sousSousCategorie) {
+		this.sousSousCategorie = sousSousCategorie;
 	}
 
 	public void setEtat(String etat) {

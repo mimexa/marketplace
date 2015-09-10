@@ -35,12 +35,72 @@ public interface Constantes {
 		String SONNETTE = "SONNETTE";
 	}
 
-	interface Couleur {
-		String BLEU = "BLEU";
-		String BLANC = "BLANC";
-		String ROUGE = "ROUGE";
-		String VERT = "VERT";
-		String JAUNE = "JAUNE";
+	public enum Velos {
+		VTT, ELECTRIQUE, RETRO, URBAN, VOYAGE, VILLE, PLIABLE, VTC;
+	}
+
+	public enum PiecesDetachees {
+		LUMIERES, PNEUS, SELLES, FREINS, DIRECTIONS, TRANSMISS;
+	}
+
+	public enum Accessoires {
+		CASQUES, SONNETTES, CADENAS, SACCOCHES, ORDIS, POMPS;
+	}
+
+	public enum Lumiere {
+		LAMP_AVT, LAMP_ARR, LAMP_AMO;
+	}
+
+	public enum Pneu {
+		PNEU, CHBRE_AIR, FONT_JTE;
+	}
+
+	public enum Selle {
+		SEL_VIL, SEL_RACE;
+	}
+
+	public enum Frein {
+		CABLES, PATINS,
+	}
+
+	public enum Direction {
+		GUIDONS, POIGNEES;
+	}
+
+	public enum Transmission {
+		CHAINE, PIGNON, PEDALES;
+	}
+
+	public enum Casque {
+		ADULTE, ENFANT;
+	}
+
+	public enum Sonnette {
+		DIGN_DONG, RACE, ENFANT;
+	}
+
+	public enum Cadenas {
+		CAD_U, CHAINE, SUR_CADRE, CABLE;
+	}
+
+	public enum Saccoche {
+		VILLE, VOYAGE;
+	}
+
+	public enum Ordinateur {
+		ORDI,
+	}
+
+	public enum Pompe {
+		POMP;
+	}
+
+	public enum Panier {
+		PLASTIQUE, METAL, OSIER;
+	}
+
+	public enum Couleur {
+		NULL, BLEU, NOIR, BLANC, ROUGE, JAUNE, VERT, GRIS, VIOLET, BEIGE, MARRON;
 	}
 
 	interface TailleCadre {
@@ -158,6 +218,10 @@ public interface Constantes {
 		Batavus, Gazelle, Giant, Sparta, Koga, Autre;
 	}
 
+	public enum MarquePieceDetachee {
+		Autre, Basil, Shimano, Vdo, Kmc, Sks, Sigma, Schivable, Cst, Vredestein, Lepper, Brooks, SelleRoyal;
+	}
+
 	interface Lang {
 		String FR = "FR";
 		String EN = "EN";
@@ -167,5 +231,10 @@ public interface Constantes {
 	interface Roles {
 		String CLIENT = "CLIENT";
 		String ADMIN = "ADMIN";
+	}
+
+	interface Binaire {
+		String OUI = "binaire.O";
+		String NON = "binaire.N";
 	}
 }
