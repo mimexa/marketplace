@@ -4,10 +4,8 @@ import static paris.velocafe.marketplace.utils.Constantes.Binaire.*;
 import static paris.velocafe.marketplace.utils.Constantes.Categorie.*;
 import static paris.velocafe.marketplace.utils.Constantes.Disponibilite.*;
 import static paris.velocafe.marketplace.utils.Constantes.Etat.*;
-import static paris.velocafe.marketplace.utils.Constantes.SousCategorie.*;
 import static paris.velocafe.marketplace.utils.Constantes.TailleCadre.*;
 import static paris.velocafe.marketplace.utils.Constantes.TypeUsage.*;
-import static paris.velocafe.marketplace.utils.Constantes.*;
 import static paris.velocafe.marketplace.utils.Constantes.UserSize.*;
 
 import java.io.Serializable;
@@ -18,7 +16,24 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 
 import paris.velocafe.marketplace.utils.CommonUtils;
+import paris.velocafe.marketplace.utils.Constantes.Accessoires;
+import paris.velocafe.marketplace.utils.Constantes.Cadenas;
+import paris.velocafe.marketplace.utils.Constantes.Casque;
+import paris.velocafe.marketplace.utils.Constantes.Couleur;
+import paris.velocafe.marketplace.utils.Constantes.Direction;
+import paris.velocafe.marketplace.utils.Constantes.Frein;
+import paris.velocafe.marketplace.utils.Constantes.Lumiere;
 import paris.velocafe.marketplace.utils.Constantes.Marque;
+import paris.velocafe.marketplace.utils.Constantes.Ordinateur;
+import paris.velocafe.marketplace.utils.Constantes.Panier;
+import paris.velocafe.marketplace.utils.Constantes.PiecesDetachees;
+import paris.velocafe.marketplace.utils.Constantes.Pneu;
+import paris.velocafe.marketplace.utils.Constantes.Pompe;
+import paris.velocafe.marketplace.utils.Constantes.Saccoche;
+import paris.velocafe.marketplace.utils.Constantes.Selle;
+import paris.velocafe.marketplace.utils.Constantes.Sonnette;
+import paris.velocafe.marketplace.utils.Constantes.Transmission;
+import paris.velocafe.marketplace.utils.Constantes.Velos;
 
 /**
  * Menus disponibles pour les pages xhtmls
@@ -45,10 +60,6 @@ public class StaticController implements Serializable {
 
 	public Map<String, String> getCategories() {
 		return Consts.categories;
-	}
-
-	public Map<String, String> getSousCategories() {
-		return Consts.sousCategories;
 	}
 
 	public Map<String, String> getMarques() {
@@ -119,25 +130,6 @@ public class StaticController implements Serializable {
 			categories.put(ACCESSOIRE, ACCESSOIRE);
 			categories.put(VETEMENT, VETEMENT);
 			categories.put(PIECE_DETACHEE, PIECE_DETACHEE);
-		}
-		public static final Map<String, String> sousCategories = new HashMap<String, String>();
-		static {
-			sousCategories.put(CASQUE, CASQUE);
-			sousCategories.put(CADENAS, CADENAS);
-			sousCategories.put(VTT, VTT);
-			sousCategories.put(VILLE, VILLE);
-			sousCategories.put(ELECTRIQUE, ELECTRIQUE);
-			sousCategories.put(RETRO, RETRO);
-			sousCategories.put(URBAN, URBAN);
-			sousCategories.put(VOYAGE, VOYAGE);
-			sousCategories.put(PLIABLE, PLIABLE);
-			sousCategories.put(VTC, VTC);
-			sousCategories.put(VTC, VTC);
-			sousCategories.put(SHORT, SHORT);
-			sousCategories.put(TSHIRT, TSHIRT);
-			sousCategories.put(CHAUSSURES, CHAUSSURES);
-			sousCategories.put(GANTS, GANTS);
-			sousCategories.put(SONNETTE, SONNETTE);
 		}
 		public static final Map<String, String> tailleCadres = new HashMap<String, String>();
 		static {

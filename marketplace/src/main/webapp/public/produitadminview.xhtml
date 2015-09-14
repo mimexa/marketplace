@@ -44,9 +44,22 @@
 						<h:selectOneMenu value="#{produitController.form.sousCategorie}"
 							id="sousCategorieInput" style="width:100%">
 							<f:selectItems var="sousCategorie"
-								value="#{staticController.sousCategories.entrySet()}"
+								value="#{produitController.sousCategories.entrySet()}"
 								itemValue="#{sousCategorie.key}"
 								itemLabel="#{messages[sousCategorie.value]}" />
+							<a4j:ajax render="@form" />
+						</h:selectOneMenu>
+						<h:outputLabel for="sousSousCategorieInput"
+							value="#{messages['produit.sousCategories']} : "
+							rendered="#{not empty produitController.sousSousCategories.entrySet()}" />
+						<h:selectOneMenu
+							value="#{produitController.form.sousSousCategorie}"
+							id="sousSousCategorieInput" style="width:100%"
+							rendered="#{not empty produitController.sousSousCategories.entrySet()}">
+							<f:selectItems var="sousSousCategorie"
+								value="#{produitController.sousSousCategories.entrySet()}"
+								itemValue="#{sousSousCategorie.key}"
+								itemLabel="#{messages[sousSousCategorie.value]}" />
 						</h:selectOneMenu>
 						<h:outputLabel value="#{messages['produit.titre']}"
 							for="titreInput" />

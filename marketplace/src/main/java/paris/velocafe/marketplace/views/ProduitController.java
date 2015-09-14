@@ -5,6 +5,7 @@ import static paris.velocafe.marketplace.utils.Constantes.PiecesDetachees.*;
 import static paris.velocafe.marketplace.utils.Constantes.Accessoires.*;
 
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.annotation.PostConstruct;
@@ -91,9 +92,9 @@ public class ProduitController implements Serializable {
 
 	public Map<String, String> getSousSousCategories() {
 		Map<String, String> sousSousCategories;
-		String sousSousCategorie = form.getCategorie();
+		String sousSousCategorie = form.getSousCategorie();
 		if (sousSousCategorie == null) {
-			sousSousCategories = null;
+			sousSousCategories = new HashMap<String, String>();
 		} else if (sousSousCategorie.equals(LUMIERES.toString())) {
 			sousSousCategories = StaticController.Consts.lumieres;
 		} else if (sousSousCategorie.equals(PNEUS.toString())) {
@@ -119,7 +120,7 @@ public class ProduitController implements Serializable {
 		} else if (sousSousCategorie.equals(POMPS.toString())) {
 			sousSousCategories = StaticController.Consts.pompes;
 		} else {
-			sousSousCategories = null;
+			sousSousCategories = new HashMap<String, String>();
 		}
 		return sousSousCategories;
 	}
