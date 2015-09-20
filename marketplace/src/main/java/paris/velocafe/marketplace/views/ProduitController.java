@@ -1,8 +1,8 @@
 package paris.velocafe.marketplace.views;
 
+import static paris.velocafe.marketplace.utils.Constantes.Accessoires.*;
 import static paris.velocafe.marketplace.utils.Constantes.Categorie.*;
 import static paris.velocafe.marketplace.utils.Constantes.PiecesDetachees.*;
-import static paris.velocafe.marketplace.utils.Constantes.Accessoires.*;
 
 import java.io.Serializable;
 import java.util.HashMap;

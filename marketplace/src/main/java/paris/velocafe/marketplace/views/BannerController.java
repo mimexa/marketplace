@@ -6,6 +6,8 @@ import static paris.velocafe.marketplace.utils.Constantes.Lang.*;
 import static paris.velocafe.marketplace.utils.Constantes.SousCategorie.*;
 import static paris.velocafe.marketplace.utils.Constantes.Etat.*;
 import static paris.velocafe.marketplace.forms.FiltreForm.Props.*;
+
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Locale;
@@ -14,6 +16,7 @@ import java.util.Set;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
@@ -24,7 +27,7 @@ import paris.velocafe.marketplace.utils.Graphics;
 import paris.velocafe.marketplace.utils.XhtmlPages;
 
 /**
- * Controlleur du filtre de la bannière
+ * Controlleur du filtre de la banniÃ¨re
  * 
  * @author maxime
  *
@@ -40,6 +43,12 @@ public class BannerController implements Serializable {
 	public void postConstruct() {
 		FacesContext.getCurrentInstance().getViewRoot().setLocale(Locale.FRANCE);
 		form = new BannerForm();
+//		try {
+//			ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
+//			externalContext.redirect("http://potdenutellaa519.wix.com/vtest");
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 	}
 
 	// Assesseurs

@@ -320,11 +320,11 @@ public class FiltreForm {
 		}
 		static final Map<String, String> couleurs = new HashMap<String, String>();
 		static {
-			couleurs.put(BLEU, BLEU);
-			couleurs.put(BLANC, BLANC);
-			couleurs.put(ROUGE, ROUGE);
-			couleurs.put(VERT, VERT);
-			couleurs.put(JAUNE, JAUNE);
+			couleurs.put(BLEU.toString(), BLEU.toString());
+			couleurs.put(BLANC.toString(), BLANC.toString());
+			couleurs.put(ROUGE.toString(), ROUGE.toString());
+			couleurs.put(VERT.toString(), VERT.toString());
+			couleurs.put(JAUNE.toString(), JAUNE.toString());
 		}
 	}
 
