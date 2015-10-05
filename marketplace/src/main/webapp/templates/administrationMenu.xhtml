@@ -25,9 +25,16 @@
 		<rich:menuSeparator />
 		<rich:menuGroup label="#{messages['menu.gestionStocks']}"
 			styleClass="dropDownMenuItem" disabled="trues">
-			<rich:menuItem label="#{messages['menu.enregistrerNouveauProduit']}"
+			<rich:menuItem label="#{messages['menu.enregistrerNouveauVelo']}"
 				styleClass="dropDownMenuItem"
-				action="#{bannerController.goTo('NOUVEAU_PRODUIT')}" />
+				action="#{bannerController.goTo('NOUVEAU_VELO')}" />
+			<rich:menuItem
+				label="#{messages['menu.enregistrerNouvelAccessoire']}"
+				styleClass="dropDownMenuItem"
+				action="#{bannerController.goTo('NOUVEL_ACCESSOIRE')}" />
+			<rich:menuItem label="#{messages['menu.enregistrerNouvellePiece']}"
+				styleClass="dropDownMenuItem"
+				action="#{bannerController.goTo('NOUVELLE_PIECE')}" />
 		</rich:menuGroup>
 	</rich:dropDownMenu>
 </ui:composition>

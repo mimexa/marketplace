@@ -19,25 +19,28 @@
 						style="width: 90px; margin-bottom: 5px" id="logo" />
 				</h:link>
 			</a4j:outputPanel>
-			<ui:include src="view.xhtml" />
-			<div style="position: absolute; right: 0; bottom: 0">
-				<ui:include src="lang.xhtml" />
-				<ui:include src="administrationMenu.xhtml" />
-				<ui:include src="pratiqueMenu.xhtml" />
-				<ui:include src="reparationMenu.xhtml" />
-				<ui:include src="mesureMenu.xhtml" />
-				<ui:include src="locationMenu.xhtml" />
-				<ui:include src="occasionMenu.xhtml" />
-				<ui:include src="neufMenu.xhtml" />
-			</div>
+			<table style="position: absolute; right: 0; bottom: 0">
+				<tr>
+					<td style="text-align: left"><ui:include src="lang.xhtml" />
+						<ui:include src="view.xhtml" /></td>
+				</tr>
+				<tr>
+					<td><ui:include src="administrationMenu.xhtml" /> <ui:include
+							src="pratiqueMenu.xhtml" /> <ui:include
+							src="reparationMenu.xhtml" /> <ui:include src="mesureMenu.xhtml" />
+						<ui:include src="locationMenu.xhtml" /> <ui:include
+							src="occasionMenu.xhtml" /> <ui:include src="neufMenu.xhtml" />
+					</td>
+				</tr>
+			</table>
 		</rich:panel>
 	</h:form>
 	<h:outputScript>
 	//<![CDATA[
 	var maxHeightHeader=100;
 	var maxHeightLogo=90;
-	var minHeightHeader=50;
-	var minHeightLogo=45;
+	var minHeightHeader=80;
+	var minHeightLogo=72;
 	
 	$(window).scroll(function(){
 		var scrollTop=$(document).scrollTop();

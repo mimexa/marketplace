@@ -100,7 +100,7 @@ public interface Constantes {
 	}
 
 	public enum Couleur {
-		NULL, BLEU, NOIR, BLANC, ROUGE, JAUNE, VERT, GRIS, VIOLET, BEIGE, MARRON;
+		NULL, BLEU, NOIR, BLANC, ROUGE, JAUNE, VERT, GRIS, VIOLET, BEIGE, MARRON, AUTRE;
 	}
 
 	interface TailleCadre {
@@ -173,6 +173,7 @@ public interface Constantes {
 			String COLOR_PRODUIT = "COLOR";
 			String SUSP_SEAT_PRODUIT = "SUSP_SEAT";
 			String EASY_ENTRY_PRODUIT = "EASY_ENTRY";
+			String AFFICHER_PRODUIT = "AFFICHER";
 
 		}
 

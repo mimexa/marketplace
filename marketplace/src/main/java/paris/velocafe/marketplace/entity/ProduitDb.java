@@ -40,6 +40,15 @@ public class ProduitDb {
 	private String color; // ADD COLUMN `COLOR` VARCHAR(10) NULL COMMENT '' AFTER `STOCK_OPTION`,
 	private String suspensionSeat; // ADD COLUMN `SUSP_SEAT` VARCHAR(1) NULL COMMENT '' AFTER `COLOR`,
 	private String easyEntry; // ADD COLUMN `EASY_ENTRY` VARCHAR(1) NULL COMMENT '' AFTER `SUSP_SEAT`;
+	private String afficherProduit;
+
+	public String getAfficherProduit() {
+		return afficherProduit;
+	}
+
+	public void setAfficherProduit(String afficherProduit) {
+		this.afficherProduit = afficherProduit;
+	}
 
 	public String getDimensionCadre() {
 		return dimensionCadre;
@@ -303,6 +312,7 @@ public class ProduitDb {
 		String color = "color"; // ADD COLUMN `COLOR` VARCHAR(10) NULL COMMENT '' AFTER `STOCK_OPTION`,
 		String suspensionSeat = "suspensionSeat"; // ADD COLUMN `SUSP_SEAT` VARCHAR(1) NULL COMMENT '' AFTER `COLOR`,
 		String easyEntry = "easyEntry"; // ADD COLUMN `EASY_ENTRY` VARCHAR(1) NULL COMMENT '' AFTER `SUSP_SEAT`;
+		String afficherProduit = "afficherProduit";
 	}
 
 }

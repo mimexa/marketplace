@@ -3,6 +3,7 @@ package paris.velocafe.marketplace.forms;
 import java.util.Date;
 
 import paris.velocafe.marketplace.utils.Constantes;
+import paris.velocafe.marketplace.utils.Constantes.Couleur;
 
 public class ProduitForm {
 
@@ -186,19 +187,50 @@ public class ProduitForm {
 		this.easyEntry = easyEntry;
 	}
 
-	public ProduitForm() {
-		etat = Constantes.Etat.NEUF;
-		categorie = Constantes.Categorie.VELO;
-		sousCategorie = Constantes.SousCategorie.VILLE;
-		afficherProduit = OUI;
-		marque = Constantes.Marque.Autre.toString();
-		disponibilite = Constantes.Disponibilite.STOCK;
-		typeUsage = Constantes.TypeUsage.MIX;
-		tailleCadre = Constantes.TailleCadre.L;
-		userSize = Constantes.UserSize.US170_180;
-		suspensionSeat = NON;
-		easyEntry = NON;
-		afficherProduit = OUI;
+	public ProduitForm(String categorie) {
+		if (Constantes.Categorie.PIECE_DETACHEE.equals(categorie)) {
+			etat = Constantes.Etat.NEUF;
+			this.categorie = Constantes.Categorie.PIECE_DETACHEE;
+			sousCategorie = Constantes.PiecesDetachees.LUMIERES.toString();
+			afficherProduit = OUI;
+			marque = Constantes.MarquePieceDetachee.Autre.toString();
+			disponibilite = Constantes.Disponibilite.STOCK;
+			typeUsage = Constantes.TypeUsage.MIX;
+			tailleCadre = Constantes.TailleCadre.L;
+			userSize = Constantes.UserSize.US170_180;
+			suspensionSeat = NON;
+			easyEntry = NON;
+			afficherProduit = OUI;
+			color = Couleur.AUTRE.toString();
+		} else if (Constantes.Categorie.ACCESSOIRE.equals(categorie)) {
+			etat = Constantes.Etat.NEUF;
+			this.categorie = Constantes.Categorie.ACCESSOIRE;
+			sousCategorie = Constantes.Accessoires.CADENAS.toString();
+			afficherProduit = OUI;
+			marque = Constantes.MarquePieceDetachee.Autre.toString();
+			disponibilite = Constantes.Disponibilite.STOCK;
+			typeUsage = Constantes.TypeUsage.MIX;
+			tailleCadre = Constantes.TailleCadre.L;
+			userSize = Constantes.UserSize.US170_180;
+			suspensionSeat = NON;
+			easyEntry = NON;
+			afficherProduit = OUI;
+			color = Couleur.AUTRE.toString();
+		} else {
+			etat = Constantes.Etat.NEUF;
+			this.categorie = Constantes.Categorie.VELO;
+			sousCategorie = Constantes.Velos.VILLE.toString();
+			afficherProduit = OUI;
+			marque = Constantes.Marque.Autre.toString();
+			disponibilite = Constantes.Disponibilite.STOCK;
+			typeUsage = Constantes.TypeUsage.MIX;
+			tailleCadre = Constantes.TailleCadre.L;
+			userSize = Constantes.UserSize.US170_180;
+			suspensionSeat = NON;
+			easyEntry = NON;
+			afficherProduit = OUI;
+			color = Couleur.AUTRE.toString();
+		}
 	}
 
 	public ProduitForm(Long idProduit) {

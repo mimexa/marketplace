@@ -45,6 +45,7 @@ public class ProduitDbRowMapper extends AbstractRowMapper<ProduitDb> {
 		produitDb.setColor(rs.getString(COLOR_PRODUIT)); // ADD COLUMN `COLOR` VARCHAR(10) NULL COMMENT '' AFTER `STOCK_OPTION`,
 		produitDb.setSuspensionSeat(rs.getString(SUSP_SEAT_PRODUIT)); // ADD COLUMN `SUSP_SEAT` VARCHAR(1) NULL COMMENT '' AFTER `COLOR`,
 		produitDb.setEasyEntry(rs.getString(EASY_ENTRY_PRODUIT)); // ADD COLUMN `EASY_ENTRY` VARCHAR(1) NULL COMMENT '' AFTER `SUSP_SEAT`;
+		produitDb.setAfficherProduit(rs.getString(AFFICHER_PRODUIT)); // ADD COLUMN `EASY_ENTRY` VARCHAR(1) NULL COMMENT '' AFTER `SUSP_SEAT`;
 		return produitDb;
 	}
 
@@ -90,6 +91,7 @@ public class ProduitDbRowMapper extends AbstractRowMapper<ProduitDb> {
 			mapPropertiesColumns.put(color, COLOR_PRODUIT); // ADD COLUMN `COLOR` VARCHAR(10) NULL COMMENT '' AFTER `STOCK_OPTION`,
 			mapPropertiesColumns.put(suspensionSeat, SUSP_SEAT_PRODUIT); // ADD COLUMN `SUSP_SEAT` VARCHAR(1) NULL COMMENT '' AFTER `COLOR`,
 			mapPropertiesColumns.put(easyEntry, EASY_ENTRY_PRODUIT); // ADD COLUMN `EASY_ENTRY` VARCHAR(1) NULL COMMENT '' AFTER `SUSP_SEAT`;
+			mapPropertiesColumns.put(afficherProduit, AFFICHER_PRODUIT);
 		}
 	}
 

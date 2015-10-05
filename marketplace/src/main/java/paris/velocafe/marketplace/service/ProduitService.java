@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import paris.velocafe.marketplace.dao.ProduitDaoImpl;
 import paris.velocafe.marketplace.domain.MiniProduit;
 import paris.velocafe.marketplace.domain.Produit;
+import paris.velocafe.marketplace.domain.SecurityController;
 import paris.velocafe.marketplace.entity.Image;
 import paris.velocafe.marketplace.forms.FiltreForm;
 import paris.velocafe.marketplace.utils.DataUtils;
@@ -20,6 +21,8 @@ public class ProduitService {
 	private ProduitDaoImpl produitDao;
 	@Inject
 	private ImageService imageService;
+	@Inject
+	private SecurityController securityController;
 
 	public MiniProduit findMiniProduitById(final Long id) {
 		return ObjectConverter.toMiniProduit(produitDao.find(id));
@@ -31,7 +34,7 @@ public class ProduitService {
 	}
 
 	public List<MiniProduit> findMiniProduit(final FiltreForm filtreForm) {
-		List<MiniProduit> miniProduits = ObjectConverter.toMiniProduits(produitDao.findList(DataUtils.filtreToSqlparams(filtreForm)));
+		List<MiniProduit> miniProduits = ObjectConverter.toMiniProduits(produitDao.findList(DataUtils.filtreToSqlparams(filtreForm, securityController)));
 		if (miniProduits != null) {
 			for (MiniProduit miniProduit : miniProduits) {
 				Image image = imageService.findMainImage(miniProduit.getIdProduit());

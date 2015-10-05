@@ -4,27 +4,34 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:rich="http://richfaces.org/rich"
 	xmlns:a4j="http://richfaces.org/a4j">
-<ui:composition>
-	<rich:dropDownMenu
-		style="float: right; text-align: center; width:45px; margin-right: 30px"
-		popupWidth="45" direction="bottomRight" styleClass="dropDownMenuHead">
-		<f:facet name="label">
-			<h:graphicImage
-				value="/resources/img/#{bannerController.form.lang}.png"
-				alt="#{bannerController.form.lang}"
-				style="width: 16px; position:relative; top: 3px;" />
-			<h:outputText value="#{bannerController.form.lang}"
-				style="margin-left:5px; margin-top:2px; vertical-align:center; position: absolute" />
-        </f:facet>
-		<rich:menuItem label="FR" icon="/resources/img/FR.png"
-			action="#{bannerController.changeLanguage('FR')}" render="@all"
-			style="width:45px" styleClass="dropDownMenuItem" />
-		<rich:menuItem label="EN" icon="/resources/img/EN.png"
-			action="#{bannerController.changeLanguage('EN')}" render="@all"
-			style="width:45px" styleClass="dropDownMenuItem" />
-		<rich:menuItem label="NL" icon="/resources/img/NL.png"
-			action="#{bannerController.changeLanguage('NL')}" render="@all"
-			style="width:45px" styleClass="dropDownMenuItem" />
-	</rich:dropDownMenu>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:sx="http://www.natixis.com/sphinx-jsf-ui/taglib">
+	<table style="display: inline">
+		<tr>
+			<td><h:commandLink
+					action="#{bannerController.changeLanguage('FR')}">
+					<h:graphicImage label="FR" url="/resources/img/FR.png"
+						render="@all" width="20" styleClass="dropDownMenuItem" />
+				</h:commandLink></td>
+			<td><h:commandLink
+					action="#{bannerController.changeLanguage('EN')}">
+					<h:graphicImage label="EN" url="/resources/img/EN.png"
+						render="@all" width="20" styleClass="dropDownMenuItem" />
+				</h:commandLink></td>
+			<td><h:commandLink
+					action="#{bannerController.changeLanguage('NL')}">
+					<h:graphicImage label="NL" url="/resources/img/NL.png"
+						action="#{bannerController.changeLanguage('NL')}" render="@all"
+						width="20" styleClass="dropDownMenuItem" />
+				</h:commandLink></td>
+		</tr>
+	</table>
 </ui:composition>
 </html>

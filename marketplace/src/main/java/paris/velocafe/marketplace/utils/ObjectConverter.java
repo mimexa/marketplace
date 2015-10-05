@@ -70,6 +70,7 @@ public class ObjectConverter {
 		produit.setColor(produitDb.getColor()); // ADD COLUMN `COLOR` VARCHAR(10) NULL COMMENT '' AFTER `STOCK_OPTION`,
 		produit.setSuspensionSeat(produitDb.getSuspensionSeat()); // ADD COLUMN `SUSP_SEAT` VARCHAR(1) NULL COMMENT '' AFTER `COLOR`,
 		produit.setEasyEntry(produitDb.getEasyEntry()); // ADD COLUMN `EASY_ENTRY` VARCHAR(1) NULL COMMENT '' AFTER `SUSP_SEAT`;
+		produit.setAfficherProduit(produitDb.getAfficherProduit());
 		return produit;
 	}
 
@@ -104,6 +105,7 @@ public class ObjectConverter {
 		produitDb.setColor(produit.getColor()); // ADD COLUMN `COLOR` VARCHAR(10) NULL COMMENT '' AFTER `STOCK_OPTION`,
 		produitDb.setSuspensionSeat(produit.getSuspensionSeat()); // ADD COLUMN `SUSP_SEAT` VARCHAR(1) NULL COMMENT '' AFTER `COLOR`,
 		produitDb.setEasyEntry(produit.getEasyEntry()); // ADD COLUMN `EASY_ENTRY` VARCHAR(1) NULL COMMENT '' AFTER `SUSP_SEAT`;
+		produitDb.setAfficherProduit(produit.getAfficherProduit());
 		return produitDb;
 	}
 
@@ -139,11 +141,12 @@ public class ObjectConverter {
 		produit.setColor(produitForm.getColor()); // ADD COLUMN `COLOR` VARCHAR(10) NULL COMMENT '' AFTER `STOCK_OPTION`,
 		produit.setSuspensionSeat(produitForm.getSuspensionSeat()); // ADD COLUMN `SUSP_SEAT` VARCHAR(1) NULL COMMENT '' AFTER `COLOR`,
 		produit.setEasyEntry(produitForm.getEasyEntry()); // ADD COLUMN `EASY_ENTRY` VARCHAR(1) NULL COMMENT '' AFTER `SUSP_SEAT`;
+		produit.setAfficherProduit(produitForm.getAfficherProduit());
 		return produit;
 	}
 
 	public static ProduitForm toProduitForm(final Produit produit) {
-		ProduitForm produitForm = new ProduitForm();
+		ProduitForm produitForm = new ProduitForm("");
 		produitForm.setIdProduit(produit.getIdProduit());
 		produitForm.setTitre(produit.getTitre());
 		produitForm.setMarque(produit.getMarque());
@@ -174,6 +177,7 @@ public class ObjectConverter {
 		produitForm.setColor(produit.getColor()); // ADD COLUMN `COLOR` VARCHAR(10) NULL COMMENT '' AFTER `STOCK_OPTION`,
 		produitForm.setSuspensionSeat(produit.getSuspensionSeat()); // ADD COLUMN `SUSP_SEAT` VARCHAR(1) NULL COMMENT '' AFTER `COLOR`,
 		produitForm.setEasyEntry(produit.getEasyEntry()); // ADD COLUMN `EASY_ENTRY` VARCHAR(1) NULL COMMENT '' AFTER `SUSP_SEAT`;
+		produitForm.setAfficherProduit(produit.getAfficherProduit());
 		return produitForm;
 	}
 

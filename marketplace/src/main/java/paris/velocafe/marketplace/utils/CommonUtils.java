@@ -17,7 +17,6 @@ import javax.sql.rowset.serial.SerialBlob;
 import javax.sql.rowset.serial.SerialException;
 
 import paris.velocafe.marketplace.domain.Args;
-import paris.velocafe.marketplace.utils.Constantes.Marque;
 
 public class CommonUtils {
 
@@ -233,6 +232,10 @@ public class CommonUtils {
 			map.put(e.toString(), e.toString());
 		}
 		return map;
+	}
+
+	public static byte[] resizeImage(final byte[] image, final int maxWidth, final int maxHeight) {
+		return image;
 	}
 
 	/**

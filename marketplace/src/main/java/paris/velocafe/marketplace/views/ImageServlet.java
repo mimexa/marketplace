@@ -35,7 +35,7 @@ public class ImageServlet extends HttpServlet {
 				response.setContentType(image.getType());
 				response.setHeader("Content-disposition", "attachment; filename=" + image.getFileName());
 				OutputStream out = response.getOutputStream();
-				out.write(image.getData());
+				out.write(CommonUtils.resizeImage(image.getData(), 200, 200));// TODO renvoyer l'image modifiée
 				out.flush();
 			} else {
 				super.doGet(req, response);

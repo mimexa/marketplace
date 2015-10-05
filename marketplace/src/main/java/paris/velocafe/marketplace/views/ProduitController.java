@@ -39,9 +39,14 @@ public class ProduitController implements Serializable {
 	@PostConstruct
 	public void init() {
 		Map<String, String> attributes = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
-		Long idProduit = attributes != null ? CommonUtils.parseLong(attributes.get(Props.idProduit)) : null;
-		Produit produit = CommonUtils.isNotNullOrEmpty(idProduit) ? produitService.findProduitById(idProduit) : null;
-		form = produit != null ? ObjectConverter.toProduitForm(produit) : new ProduitForm();
+		Produit produit = null;
+		String categorie = null;
+		if (attributes != null) {
+			Long idProduit = CommonUtils.parseLong(attributes.get(Props.idProduit));
+			produit = CommonUtils.isNotNullOrEmpty(idProduit) ? produitService.findProduitById(idProduit) : null;
+			categorie = attributes.get(Props.categorie) != null ? attributes.get(Props.categorie).replaceAll("[\\[\\]]", "") : null;
+		}
+		form = produit != null ? ObjectConverter.toProduitForm(produit) : new ProduitForm(categorie);
 	}
 
 	public ProduitForm getForm() {

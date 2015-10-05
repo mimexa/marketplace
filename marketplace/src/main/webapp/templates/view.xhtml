@@ -8,9 +8,9 @@
 	xmlns:rich="http://richfaces.org/rich"
 	xmlns:s="http://jboss.com/products/seam/taglib"
 	xmlns:sx="http://www.natixis.com/sphinx-jsf-ui/taglib">
-	<rich:panel
-		style="position: absolute; right: 0; top: 0; padding: 5px; background-color: transparent"
-		rendered="#{versionManagerController.isRendered('view') and securityController.isAdmin()}">
+	<a4j:outputPanel
+		rendered="#{versionManagerController.isRendered('view') and securityController.isAdmin()}"
+		style="display:inline">
 		<h:outputLabel value="Changer la vue :" for="roleViewInput"
 			style="margin-right:5px" />
 		<h:selectOneMenu value="#{securityController.roleView}"
@@ -20,5 +20,5 @@
 			<a4j:ajax event="change"
 				oncomplete="window.location.replace(window.location.href);" />
 		</h:selectOneMenu>
-	</rich:panel>
+	</a4j:outputPanel>
 </ui:composition>

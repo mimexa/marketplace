@@ -9,13 +9,14 @@ import java.util.Set;
 import org.primefaces.model.TreeNode;
 
 import paris.velocafe.marketplace.domain.Pair;
+import paris.velocafe.marketplace.domain.SecurityController;
 import paris.velocafe.marketplace.domain.SqlParams;
 import paris.velocafe.marketplace.entity.ProduitDb.Props;
 import paris.velocafe.marketplace.forms.FiltreForm;
 
 public class DataUtils {
 
-	public static Set<SqlParams<?>> filtreToSqlparams(final FiltreForm filtreForm) {
+	public static Set<SqlParams<?>> filtreToSqlparams(final FiltreForm filtreForm, final SecurityController securityController) {
 		Set<SqlParams<?>> args = new HashSet<SqlParams<?>>();
 		Set<String> couleur = filtreForm.getCouleur();
 		if (CommonUtils.isNotNullOrEmpty(couleur)) {
@@ -42,20 +43,23 @@ public class DataUtils {
 			args.add(new SqlParams<String>(Props.categorie, EQUALS, categorie));
 		}
 		Set<String> tailleCadre = filtreForm.getTailleCadre();
-		if (CommonUtils.isNotNullOrEmpty(marque)) {
+		if (CommonUtils.isNotNullOrEmpty(tailleCadre)) {
 			args.add(new SqlParams<String>(Props.tailleCadre, EQUALS, tailleCadre));
 		}
 		Set<String> disponibilite = filtreForm.getDisponibilite();
-		if (CommonUtils.isNotNullOrEmpty(marque)) {
+		if (CommonUtils.isNotNullOrEmpty(disponibilite)) {
 			args.add(new SqlParams<String>(Props.disponibilite, EQUALS, disponibilite));
 		}
 		Set<String> typeUsage = filtreForm.getTypeUsage();
-		if (CommonUtils.isNotNullOrEmpty(marque)) {
+		if (CommonUtils.isNotNullOrEmpty(typeUsage)) {
 			args.add(new SqlParams<String>(Props.typeUsage, EQUALS, typeUsage));
 		}
 		Set<String> userSize = filtreForm.getUserSize();
-		if (CommonUtils.isNotNullOrEmpty(marque)) {
+		if (CommonUtils.isNotNullOrEmpty(userSize)) {
 			args.add(new SqlParams<String>(Props.userSize, EQUALS, userSize));
+		}
+		if (!securityController.isAdminView()) {
+			args.add(new SqlParams<String>(Props.afficherProduit, EQUALS, Consts.OUI));
 		}
 		return args;
 	}
@@ -77,7 +81,7 @@ public class DataUtils {
 
 	private interface Consts {
 		double tva = 0.196;
-		String tousValue = "TOUS";
+		String OUI = "O";
 	}
 
 }

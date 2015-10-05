@@ -239,19 +239,26 @@ public class FiltreForm {
 					if (Props.ETAT.equals(param)) {
 						etat.clear();
 						etat.addAll(values);
-					} else if (Props.CATEGORIE.equals(param)) {
+					} else if (Props.CATEGORIE.equals(param) && !isPropertyFound(Props.SOUS_CATEGORIE, args)) {
 						for (String value : values) {
 							for (TreeNode node : categoriesTree.getChildren()) {
 								if (value.equals(((Pair<String, String>) node.getData()).getValue())) {
 									node.setSelected(true);
+								} else {
+									node.setSelected(false);
 								}
 							}
 						}
 					} else if (Props.SOUS_CATEGORIE.equals(param)) {
 						for (String value : values) {
 							for (TreeNode node : categoriesTree.getChildren()) {
-								if (value.equals(((Pair<String, String>) node.getData()).getValue())) {
-									node.setSelected(true);
+								node.setSelected(false);
+								for (TreeNode subnode : node.getChildren()) {
+									if (value.equals(((Pair<String, String>) subnode.getData()).getValue())) {
+										subnode.setSelected(true);
+									} else {
+										subnode.setSelected(false);
+									}
 								}
 							}
 						}
@@ -259,6 +266,28 @@ public class FiltreForm {
 				}
 			}
 		}
+	}
+
+	private static <E> boolean isPropertyFound(final String propertyName, Set<Args<E>> args) {
+		boolean isPropertyFound = false;
+		for (Args arg : args) {
+			if (propertyName.equals(arg.getParam())) {
+				isPropertyFound = true;
+				break;
+			}
+		}
+		return isPropertyFound;
+	}
+
+	private static <E> Args getProperty(final String propertyName, Set<Args<E>> args) {
+		Args arg = null;
+		for (Args ag : args) {
+			if (propertyName.equals(ag.getParam())) {
+				arg = ag;
+				break;
+			}
+		}
+		return arg;
 	}
 
 	public static TreeNode newTreeNode() {

@@ -1,13 +1,12 @@
 package paris.velocafe.marketplace.views;
 
-import static paris.velocafe.marketplace.utils.XhtmlPages.*;
+import static paris.velocafe.marketplace.forms.FiltreForm.Props.*;
 import static paris.velocafe.marketplace.utils.Constantes.Categorie.*;
+import static paris.velocafe.marketplace.utils.Constantes.Etat.*;
 import static paris.velocafe.marketplace.utils.Constantes.Lang.*;
 import static paris.velocafe.marketplace.utils.Constantes.SousCategorie.*;
-import static paris.velocafe.marketplace.utils.Constantes.Etat.*;
-import static paris.velocafe.marketplace.forms.FiltreForm.Props.*;
+import static paris.velocafe.marketplace.utils.XhtmlPages.*;
 
-import java.io.IOException;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Locale;
@@ -16,7 +15,6 @@ import java.util.Set;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.SessionScoped;
-import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
@@ -27,7 +25,7 @@ import paris.velocafe.marketplace.utils.Graphics;
 import paris.velocafe.marketplace.utils.XhtmlPages;
 
 /**
- * Controlleur du filtre de la banniÃ¨re
+ * Controlleur du filtre de la bannière
  * 
  * @author maxime
  *
@@ -43,12 +41,12 @@ public class BannerController implements Serializable {
 	public void postConstruct() {
 		FacesContext.getCurrentInstance().getViewRoot().setLocale(Locale.FRANCE);
 		form = new BannerForm();
-//		try {
-//			ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
-//			externalContext.redirect("http://potdenutellaa519.wix.com/vtest");
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
+		//		try {
+		//			ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
+		//			externalContext.redirect("http://potdenutellaa519.wix.com/vtest");
+		//		} catch (IOException e) {
+		//			e.printStackTrace();
+		//		}
 	}
 
 	// Assesseurs
@@ -66,7 +64,6 @@ public class BannerController implements Serializable {
 	public void goTo(String dest) {
 		Consts.Destination destination = Consts.Destination.valueOf(dest);
 		CommonUtils.toUrlAndParams(Consts.xhtmlPages.get(destination), Consts.params.get(destination));
-
 	}
 
 	public void changeLanguage(String lang) {
@@ -105,23 +102,21 @@ public class BannerController implements Serializable {
 			xhtmlPages.put(Destination.VELOS_NEUF_VILLE, MARQUETPLACE_XHTML);
 			params.put(Destination.VELOS_NEUF_VILLE, CommonUtils.toSet(new Args<String>(CATEGORIE, VELO), new Args<String>(ETAT, NEUF), new Args<String>(SOUS_CATEGORIE, VILLE)));
 			xhtmlPages.put(Destination.VELOS_NEUF_ELECTRIQUES, MARQUETPLACE_XHTML);
-			params.put(Destination.VELOS_NEUF_ELECTRIQUES, CommonUtils.toSet(new Args<String>(CATEGORIE, VELO), new Args<String>(ETAT, NEUF), new Args<String>(SOUS_CATEGORIE, VILLE)));
+			params.put(Destination.VELOS_NEUF_ELECTRIQUES, CommonUtils.toSet(new Args<String>(CATEGORIE, VELO), new Args<String>(ETAT, NEUF), new Args<String>(SOUS_CATEGORIE, ELECTRIQUE)));
 			xhtmlPages.put(Destination.VELOS_NEUF_VTT, MARQUETPLACE_XHTML);
-			params.put(Destination.VELOS_NEUF_VTT, CommonUtils.toSet(new Args<String>(CATEGORIE, VELO), new Args<String>(ETAT, NEUF), new Args<String>(SOUS_CATEGORIE, VILLE)));
-			xhtmlPages.put(Destination.VELOS_NEUF_POLYVALENTS, MARQUETPLACE_XHTML);
-			params.put(Destination.VELOS_NEUF_POLYVALENTS, CommonUtils.toSet(new Args<String>(CATEGORIE, VELO), new Args<String>(ETAT, NEUF), new Args<String>(SOUS_CATEGORIE, VILLE)));
+			params.put(Destination.VELOS_NEUF_VTT, CommonUtils.toSet(new Args<String>(CATEGORIE, VELO), new Args<String>(ETAT, NEUF), new Args<String>(SOUS_CATEGORIE, VTT)));
 			xhtmlPages.put(Destination.VELOS_NEUF_PLIABLES, MARQUETPLACE_XHTML);
-			params.put(Destination.VELOS_NEUF_PLIABLES, CommonUtils.toSet(new Args<String>(CATEGORIE, VELO), new Args<String>(ETAT, NEUF), new Args<String>(SOUS_CATEGORIE, VILLE)));
+			params.put(Destination.VELOS_NEUF_PLIABLES, CommonUtils.toSet(new Args<String>(CATEGORIE, VELO), new Args<String>(ETAT, NEUF), new Args<String>(SOUS_CATEGORIE, PLIABLE)));
 			xhtmlPages.put(Destination.TOUS_ACCESSOIRES_NEUFS, MARQUETPLACE_XHTML);
-			params.put(Destination.TOUS_ACCESSOIRES_NEUFS, CommonUtils.toSet(new Args<String>(CATEGORIE, VELO), new Args<String>(ETAT, NEUF), new Args<String>(SOUS_CATEGORIE, VILLE)));
+			params.put(Destination.TOUS_ACCESSOIRES_NEUFS, CommonUtils.toSet(new Args<String>(CATEGORIE, ACCESSOIRE), new Args<String>(ETAT, NEUF)));
 			xhtmlPages.put(Destination.PIECES_DETACHEES_NEUVES, MARQUETPLACE_XHTML);
-			params.put(Destination.PIECES_DETACHEES_NEUVES, CommonUtils.toSet(new Args<String>(CATEGORIE, VELO), new Args<String>(ETAT, NEUF), new Args<String>(SOUS_CATEGORIE, VILLE)));
+			params.put(Destination.PIECES_DETACHEES_NEUVES, CommonUtils.toSet(new Args<String>(CATEGORIE, PIECE_DETACHEE), new Args<String>(ETAT, NEUF)));
 			xhtmlPages.put(Destination.CASQUES_NEUFS, MARQUETPLACE_XHTML);
-			params.put(Destination.CASQUES_NEUFS, CommonUtils.toSet(new Args<String>(CATEGORIE, VELO), new Args<String>(ETAT, NEUF), new Args<String>(SOUS_CATEGORIE, VILLE)));
+			params.put(Destination.CASQUES_NEUFS, CommonUtils.toSet(new Args<String>(CATEGORIE, ACCESSOIRE), new Args<String>(ETAT, NEUF), new Args<String>(SOUS_CATEGORIE, CASQUE)));
 			xhtmlPages.put(Destination.VETEMENTS_NEUFS, MARQUETPLACE_XHTML);
-			params.put(Destination.VETEMENTS_NEUFS, CommonUtils.toSet(new Args<String>(CATEGORIE, VELO), new Args<String>(ETAT, NEUF), new Args<String>(SOUS_CATEGORIE, VILLE)));
+			params.put(Destination.VETEMENTS_NEUFS, CommonUtils.toSet(new Args<String>(CATEGORIE, ACCESSOIRE), new Args<String>(ETAT, NEUF), new Args<String>(SOUS_CATEGORIE, VETEMENT)));
 			xhtmlPages.put(Destination.CADENAS_NEUFS, MARQUETPLACE_XHTML);
-			params.put(Destination.CADENAS_NEUFS, CommonUtils.toSet(new Args<String>(CATEGORIE, VELO), new Args<String>(ETAT, NEUF), new Args<String>(SOUS_CATEGORIE, VILLE)));
+			params.put(Destination.CADENAS_NEUFS, CommonUtils.toSet(new Args<String>(CATEGORIE, ACCESSOIRE), new Args<String>(ETAT, NEUF), new Args<String>(SOUS_CATEGORIE, CADENAS)));
 			xhtmlPages.put(Destination.TOUS_VELOS_OCCASIONS, MARQUETPLACE_XHTML);
 			params.put(Destination.TOUS_VELOS_OCCASIONS, CommonUtils.toSet(new Args<String>(CATEGORIE, VELO), new Args<String>(ETAT, NEUF), new Args<String>(SOUS_CATEGORIE, VILLE)));
 			xhtmlPages.put(Destination.VELOS_OCCASIONS_VILLE, MARQUETPLACE_XHTML);
@@ -154,7 +149,12 @@ public class BannerController implements Serializable {
 			xhtmlPages.put(Destination.HORAIRES, PRATIQUE_XHTML);
 			xhtmlPages.put(Destination.QUI_SOMMES_NOUS, PRATIQUE_XHTML);
 			xhtmlPages.put(Destination.PARTENAIRES, PARTENAIRES_XHTML);
-			xhtmlPages.put(Destination.NOUVEAU_PRODUIT, PRODUIT_XHTML);
+			xhtmlPages.put(Destination.NOUVEAU_VELO, PRODUIT_XHTML);
+			params.put(Destination.NOUVEAU_VELO, CommonUtils.toSet(new Args<String>(CATEGORIE, VELO)));
+			xhtmlPages.put(Destination.NOUVELLE_PIECE, PRODUIT_XHTML);
+			params.put(Destination.NOUVELLE_PIECE, CommonUtils.toSet(new Args<String>(CATEGORIE, PIECE_DETACHEE)));
+			xhtmlPages.put(Destination.NOUVEL_ACCESSOIRE, PRODUIT_XHTML);
+			params.put(Destination.NOUVEL_ACCESSOIRE, CommonUtils.toSet(new Args<String>(CATEGORIE, ACCESSOIRE)));
 		}
 
 		enum Destination {
@@ -165,7 +165,8 @@ public class BannerController implements Serializable {
 					"velos_occasions_pliables"), TOUS_OCCASIONS_ACCESSOIRES("tous_accessoires_occasions"), PIECES_DETACHEES_OCCASIONS("pieces_detachees_occasions"), CASQUES_OCCASIONS(
 					"casques_occasions"), VETEMENTS_OCCASIONS("vetements_occasions"), RESERVER_VELO("reserver_velos"), RESERVER_GROUPE("reserver_groupe"), TOURISME_PRO("tourisme_pro"), LIVRE_OR(
 					"livre_or"), ASSEMBLER_VELO("assembler_velo"), REALISATIONS_ASSEMBLAGE("realisations_assemblage"), TARIFS_REPARATIONS("tarifs_reparations"), REALISATIONS_REPARATIONS(
-					"realisations_reparations"), NOUS_TROUVER("nous_trouver"), HORAIRES("horaires"), QUI_SOMMES_NOUS("qui_sommes_nous"), PARTENAIRES("partenaires"), NOUVEAU_PRODUIT("nouveau_produit");
+					"realisations_reparations"), NOUS_TROUVER("nous_trouver"), HORAIRES("horaires"), QUI_SOMMES_NOUS("qui_sommes_nous"), PARTENAIRES("partenaires"), NOUVEAU_VELO("nouveau_produit"), NOUVEL_ACCESSOIRE(
+					"nouvel_accessoire"), NOUVELLE_PIECE("nouvelle_piece");
 
 			private String value;
 

@@ -21,13 +21,12 @@
 					<tag:outputTextField value="#{produitController.form.marque}"
 						label="#{messages['produit.marque']}" />
 					<tag:outputTextField
-						value="#{produitController.form.montantHT+produitController.form.montantTVA} € ttc"
+						value="#{produitController.form.montantHT+produitController.form.montantTVA} €TTC"
 						label="#{messages['filtre.prix']}" />
-				</table>
-			</rich:tab>
-			<rich:tab header="#{messages['produit.specifications']}"
-				contentClass="tabFiche">
-				<table>
+					<tag:outputTextField value="#{produitController.form.montantHT} €"
+						label="#{messages['produit.montantHt']}" />
+					<tag:outputTextField value="#{produitController.form.montantTVA} €"
+						label="#{messages['produit.montantTva']}" />
 					<tag:outputTextField
 						value="#{produitController.form.referenceFabricant}"
 						label="#{messages['produit.referenceFabricant']}" />
@@ -37,6 +36,70 @@
 					<tag:outputTextField
 						value="#{produitController.form.referenceTechnique}"
 						label="#{messages['produit.referenceTechnique']}" />
+					<tag:outputTextField
+						value="#{not empty produitController.form.categorie ? messages[produitController.form.categorie] : ''}"
+						label="#{messages['produit.categorie']}" />
+					<tag:outputTextField
+						value="#{not empty produitController.form.sousCategorie ? messages[produitController.form.sousCategorie] : ''}"
+						label="#{messages['produit.sousCategorie']}" />
+					<tag:outputTextField
+						value="#{not empty produitController.form.etat ? messages[produitController.form.etat] : ''}"
+						label="#{messages['filtre.etat']}" />
+					<tag:outputTextField value="#{produitController.form.dateEntree}"
+						label="#{messages['produit.dateEntree']}" />
+					<tag:outputTextField
+						value="#{produitController.form.dateFabrication}"
+						label="#{messages['produit.dateFabrication']}" />
+					<tag:outputTextField
+						value="#{produitController.form.referenceTechnique}"
+						label="#{messages['produit.referenceTechnique']}" />
+					<tag:outputTextField
+						value="#{not empty produitController.form.disponibilite ? messages[produitController.form.disponibilite] : ''}"
+						label="#{messages['produit.disponibilite']}" />
+					<tag:outputTextField
+						value="#{not empty produitController.form.typeUsage ? messages[produitController.form.typeUsage] : ''}"
+						label="#{messages['produit.typeUsage']}" />
+					<tag:outputTextField value="#{produitController.form.diametreRoue}"
+						label="#{messages['produit.diametreRoue']}" />
+					<tag:outputTextField
+						value="#{not empty produitController.form.tailleCadre ? messages[produitController.form.tailleCadre] : ''}"
+						label="#{messages['produit.tailleCadre']}" />
+					<tag:outputTextField
+						value="#{not empty produitController.form.dimensionCadre ? messages[produitController.form.dimensionCadre] : ''}"
+						label="#{messages['produit.dimensionCadre']}" />
+					<tag:outputTextField
+						value="#{not empty produitController.form.userSize ? messages[produitController.form.userSize] : ''}"
+						label="#{messages['filtre.tailleCycliste']}" />
+					<tag:outputTextField value="#{produitController.form.style}"
+						label="#{messages['produit.style']}" />
+					<tag:outputTextField value="#{produitController.form.option1}"
+						label="#{messages['produit.option']}" />
+					<tag:outputTextField value="#{produitController.form.option2}"
+						label="#{messages['produit.option']}" />
+					<tag:outputTextField value="#{produitController.form.option3}"
+						label="#{messages['produit.option']}" />
+					<tag:outputTextField value="#{produitController.form.sizecategory}"
+						label="#{messages['produit.sizecategory']}" />
+					<tag:outputTextField
+						value="#{produitController.form.weightCategory}"
+						label="#{messages['produit.weightCategory']}" />
+					<tag:outputTextField
+						value="#{produitController.form.packageCategory}"
+						label="#{messages['produit.packageCategory']}" />
+					<tag:outputTextField value="#{produitController.form.stockOption}"
+						label="#{messages['produit.stockOption']}" />
+					<tag:outputTextField
+						value="#{not empty produitController.form.color ? messages[produitController.form.color] : ''}"
+						label="#{messages['produit.couleur']}" />
+					<tag:outputTextField
+						value="#{not empty produitController.form.suspensionSeat ? messages['binaire.'.concat(produitController.form.suspensionSeat)] : ''}"
+						label="#{messages['produit.suspensionSeat']}" />
+					<tag:outputTextField
+						value="#{not empty produitController.form.easyEntry ? messages['binaire.'.concat(produitController.form.easyEntry)] : ''}"
+						label="#{messages['produit.easyEntry']}" />
+					<tag:outputTextField
+						value="#{not empty produitController.form.sousSousCategorie ? messages[produitController.form.sousSousCategorie] : ''}"
+						label="#{messages['produit.sousSousCategorie']}" />
 				</table>
 			</rich:tab>
 			<rich:tab header="#{messages['produit.disponibilite']}"

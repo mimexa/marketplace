@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class Args<E> {
+public class Args<E> implements Comparable<Args> {
 
 	private String param;
 	private Set<E> values;
@@ -39,6 +39,11 @@ public class Args<E> {
 
 	public void setValues(Set<E> values) {
 		this.values = values;
+	}
+
+	@Override
+	public int compareTo(@SuppressWarnings("rawtypes") Args o) {
+		return param.compareTo(o.param);
 	}
 
 }

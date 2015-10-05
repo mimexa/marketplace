@@ -27,7 +27,7 @@
 
 .dropDownMenuItem {
 	text-align: left;
-	border-radius: 25px;
+	border-radius: 7px;
 	font-size: 13px !important;
 	border: medium;
 }
@@ -37,11 +37,10 @@
 	display: inline;
 	float: right;
 	background-color: #b79e6c;
-	border-radius: 25 px;
 	font-size: 14px !important;
 	margin-bottom: 5px;
 	margin-left: 5px;
-	border-radius: 25px;
+	border-radius: 7px;
 	width: 150px;
 	line-height: 30px;
 	vertical-align: middle;
@@ -52,13 +51,13 @@
 }
 
 .headerPanel {
-	border-radius: 25px;
+	border-radius: 7px;
 	padding-left: 15px !important;
 	font-size: 16px !important;
 }
 
 .footerHeaderPanel {
-	border-radius: 25px;
+	border-radius: 7px;
 	padding-left: 15px !important;
 	border: none;
 	font-size: 12px !important;
@@ -76,23 +75,23 @@ a {
 }
 
 .accordionHeader {
-	border-radius: 25px;
+	border-radius: 7px;
 	font-size: 15px !important;
 	margin-top: 4px;
 }
 
 .dropDownMenuItem.rf-ddm-itm-unsel {
-	border-radius: 25px;
+	border-radius: 7px;
 }
 
 .rf-ddm-lst {
-	border-radius: 20px;
+	border-radius: 5px;
 	border: none;
 	background-color: #bea882 !important;
 }
 
 .rf-ddm-lst-bg {
-	border-radius: 20px;
+	border-radius: 7px;
 	border: none;
 }
 
@@ -119,11 +118,15 @@ a {
 }
 
 .blanckBody {
-	border-radius: 25px;
+	border-radius: 7px;
 	background-color: #f1f1f1;
 	margin-top: 4px;
 }
 
 .ui-carousel-header-title {
 	width: 100%;
+}
+
+.lookLikeLink{
+	
 }

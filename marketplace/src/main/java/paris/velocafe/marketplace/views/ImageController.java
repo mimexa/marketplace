@@ -63,6 +63,7 @@ public class ImageController implements Serializable {
 	}
 
 	public int getFicheWidth() {
+		// faire un image util qui redimensionne les images
 		return Graphics.ficheWidth;
 	}
 

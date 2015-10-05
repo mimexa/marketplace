@@ -34,6 +34,15 @@ public class Produit {
 	private String diametreRoue; // DIAM_ROUE VARCHAR(5)
 	private String tailleCadre; // TAILL_CADRE VARCHAR(4)
 	private String dimensionCadre; // DIM_CADRE INT
+	private String afficherProduit;
+
+	public String getAfficherProduit() {
+		return afficherProduit;
+	}
+
+	public void setAfficherProduit(String afficherProduit) {
+		this.afficherProduit = afficherProduit;
+	}
 
 	public String getDisponibilite() {
 		return disponibilite;

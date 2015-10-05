@@ -86,6 +86,10 @@ public class StaticController implements Serializable {
 		return Consts.userSizes;
 	}
 
+	public Map<String, String> getCouleurs() {
+		return Consts.couleurs;
+	}
+
 	public Map<String, String> getTailleCadresTous() {
 		return Consts.tailleCadresTous;
 	}

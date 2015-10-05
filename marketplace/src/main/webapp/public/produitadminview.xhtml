@@ -21,6 +21,16 @@
 				<h:panelGrid columns="2" columnClasses="columns"
 					rowClasses="columns">
 					<h:panelGrid columns="2" columnClasses="columns">
+						<h:outputLabel for="affichierProduitInput"
+							value="#{messages['produit.afficherProduit']} : " />
+						<h:selectOneRadio
+							value="#{produitController.form.afficherProduit}"
+							id="affichierProduitInput" style="width:100%">
+							<f:selectItems var="binaire"
+								value="#{staticController.binaire.entrySet()}"
+								itemValue="#{binaire.key}"
+								itemLabel="#{messages[binaire.value]}" />
+						</h:selectOneRadio>
 						<h:outputLabel for="etatInput"
 							value="#{messages['filtre.etat']} : " />
 						<h:selectOneMenu value="#{produitController.form.etat}"
@@ -126,9 +136,15 @@
 						<h:outputLabel value="Option stockage : " for="stockOptionInput" />
 						<h:inputText id="stockOptionInput"
 							value="#{produitController.form.stockOption}" />
-						<h:outputLabel value="Couleur : " for="colorInput" />
-						<h:inputText id="colorInput"
-							value="#{produitController.form.color}" />
+						<h:outputLabel value="#{messages['produit.couleur']} : "
+							for="colorInput" />
+						<h:selectOneMenu value="#{produitController.form.color}"
+							id="colorInput" style="width:100%">
+							<f:selectItems var="couleurs"
+								value="#{staticController.couleurs.entrySet()}"
+								itemValue="#{couleurs.key}"
+								itemLabel="#{messages[couleurs.value]}" />
+						</h:selectOneMenu>
 					</h:panelGrid>
 					<h:panelGrid columns="2" columnClasses="columns">
 						<h:outputLabel for="typeUsageInput"
