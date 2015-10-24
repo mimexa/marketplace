@@ -7,7 +7,7 @@
 	xmlns:a4j="http://richfaces.org/a4j"
 	xmlns:rich="http://richfaces.org/rich">
 	<h:form
-		style="width:75%; min-width:800px; margin: 0 auto; border-radius: 25px; background: #cacabc; margin-top: 5px">
+		style="width:75%; min-width:800px; margin: 0 auto; border-radius: 1px; background: #cacabc; margin-top: 5px; font: Arial,Verdana,sans-serif">
 		<table style="width: 100%; padding: 10px">
 			<tr style="padding-top: 10px">
 				<td style="vertical-align: text-top;"><rich:panel
@@ -31,12 +31,9 @@
 						<ul>
 							<li><h:commandLink value="Vélos et accessoires" />
 								<ul>
-									<li><h:commandLink value="Véos de Ville" /></li>
+									<li><h:commandLink value="Vélos de Ville" /></li>
 									<li><h:commandLink value="VTT" /></li>
 									<li><h:commandLink value="Vélos electriques" /></li>
-									<li><h:commandButton value="Administration">
-											<rich:componentControl target="loginPopup" operation="show" />
-										</h:commandButton></li>
 								</ul></li>
 							<li><h:commandLink value="Livraisons" /></li>
 						</ul>
@@ -54,8 +51,11 @@
 					</rich:panel></td>
 			</tr>
 			<tr>
-				<td colspan="3"><h:outputText style="font-size: 12px"
-						value="#{messages['copyright']}" escape="false" /></td>
+				<td colspan="3"><h:outputText style="font-size: 14px; font: Arial,Verdana,sans-serif"
+						value="#{messages['copyright']}" escape="false" /><h:commandLink
+						styleClass="showonover" value="Administration">
+						<rich:componentControl target="loginPopup" operation="show" />
+					</h:commandLink>.</td>
 			</tr>
 		</table>
 	</h:form>

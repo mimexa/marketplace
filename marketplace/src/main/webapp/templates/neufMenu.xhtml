@@ -10,13 +10,12 @@
 		rendered="#{versionManagerController.isRendered('neufMenu')}">
 		<f:facet name="label">
 			<h:panelGroup>
-				<h:outputText value="#{messages['neuf']}" />
+				<h:outputText value="Shop" />
 			</h:panelGroup>
 		</f:facet>
-		<rich:menuItem label="#{messages['menu.tousVelos']}"
-			styleClass="dropDownMenuItem"
+		<rich:menuItem label="Vélos" styleClass="dropDownMenuItem"
 			action="#{bannerController.goTo('TOUS_VELOS_NEUFS')}" />
-		<rich:menuGroup label="Vélos" styleClass="dropDownMenuItem">
+		<!-- rich:menuGroup label="Vélos" styleClass="dropDownMenuItem">
 			<rich:menuItem label="#{messages['menu.velosVille']}"
 				styleClass="dropDownMenuItem"
 				action="#{bannerController.goTo('VELOS_NEUF_VILLE')}">
@@ -33,12 +32,12 @@
 			<rich:menuItem label="#{messages['menu.velosPliables']}"
 				styleClass="dropDownMenuItem"
 				action="#{bannerController.goTo('VELOS_NEUF_PLIABLES')}" />
-		</rich:menuGroup>
+		</rich:menuGroup-->
 		<rich:menuSeparator />
-		<rich:menuItem label="#{messages['menu.tousAccessoires']}"
+		<rich:menuItem label="Accessoires &amp; pièces détachées"
 			styleClass="dropDownMenuItem"
 			action="#{bannerController.goTo('TOUS_ACCESSOIRES_NEUFS')}" />
-		<rich:menuGroup label="#{messages['menu.accessoires']}"
+		<!-- rich:menuGroup label="#{messages['menu.accessoires']}"
 			styleClass="dropDownMenuItem">
 			<rich:menuItem label="#{messages['menu.piecesDetachees']}"
 				styleClass="dropDownMenuItem"
@@ -52,6 +51,6 @@
 			<rich:menuItem label="#{messages['menu.cadenas']}"
 				styleClass="dropDownMenuItem"
 				action="#{bannerController.goTo('CADENAS_NEUFS')}" />
-		</rich:menuGroup>
+		</rich:menuGroup-->
 	</rich:dropDownMenu>
 </ui:composition>

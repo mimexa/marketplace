@@ -24,7 +24,7 @@
 		<!-- Setting this property using archetype-metadata.xml requiredPorperty 
 			so that generated project uses correct version of WFK BOM. -->
 		<version.jboss.bom.wfk>2.7.0-redhat-1</version.jboss.bom.wfk>
-		<spring.version>3.2.3.RELEASE</spring.version>
+		<spring.version>4.2.1.RELEASE</spring.version>
 		<deltaspike.version>1.4.1</deltaspike.version>
 	</properties>
 

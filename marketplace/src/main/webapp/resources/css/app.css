@@ -27,7 +27,7 @@
 
 .dropDownMenuItem {
 	text-align: left;
-	border-radius: 7px;
+	border-radius: 2px;
 	font-size: 13px !important;
 	border: medium;
 }
@@ -40,7 +40,7 @@
 	font-size: 14px !important;
 	margin-bottom: 5px;
 	margin-left: 5px;
-	border-radius: 7px;
+	border-radius: 2px;
 	width: 150px;
 	line-height: 30px;
 	vertical-align: middle;
@@ -51,16 +51,15 @@
 }
 
 .headerPanel {
-	border-radius: 7px;
+	border-radius: 2px;
 	padding-left: 15px !important;
 	font-size: 16px !important;
 }
 
 .footerHeaderPanel {
-	border-radius: 7px;
+	border-radius: 2px;
 	padding-left: 15px !important;
 	border: none;
-	font-size: 12px !important;
 }
 
 .headerBody {
@@ -75,23 +74,23 @@ a {
 }
 
 .accordionHeader {
-	border-radius: 7px;
+	border-radius: 2px;
 	font-size: 15px !important;
 	margin-top: 4px;
 }
 
 .dropDownMenuItem.rf-ddm-itm-unsel {
-	border-radius: 7px;
+	border-radius: 2px;
 }
 
 .rf-ddm-lst {
-	border-radius: 5px;
+	border-radius: 2px;
 	border: none;
 	background-color: #bea882 !important;
 }
 
 .rf-ddm-lst-bg {
-	border-radius: 7px;
+	border-radius: 1px;
 	border: none;
 }
 
@@ -105,6 +104,7 @@ a {
 
 .footerStyle {
 	background-color: #cacabc !important;
+	font-size: 14px !important;
 }
 
 .homeImg {
@@ -118,15 +118,36 @@ a {
 }
 
 .blanckBody {
-	border-radius: 7px;
+	border-radius: 2px;
 	background-color: #f1f1f1;
 	margin-top: 4px;
+	border: none;
 }
 
 .ui-carousel-header-title {
 	width: 100%;
 }
 
-.lookLikeLink{
+.lookLikeLink {
 	
+}
+
+.showonover {
+	color: #cacabc;
+	background-color: #cacabc;
+}
+
+.showonover:hover {
+	color: black;
+	background-color: #cacabc;
+}
+
+a {
+	font: Arial, Verdana, sans-serif;
+	font-size: 14px;
+}
+
+td {
+	font: Arial, Verdana, sans-serif;
+	font-size: 14px;
 }

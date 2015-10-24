@@ -12,44 +12,58 @@
 	<h:form>
 		<table>
 			<tr>
-				<td colspan="2" style="position: relative; overflow: hidden;"><h:outputText
-						value="Réparation et vente de vélos de style"
-						style="background-color: white; color: #7f7f60; font-size: 40px; opacity: 0.7; width: 100%; border-radius: 5px; position: absolute; left:0; top:10px; z-index:90" />
-					<p:carousel var="img" value="#{homeController.imgs}" numVisible="1"
+				<td colspan="3" style="background-color: white; text-align: center"><h:outputText
+						value="Atelier vélos : vente &amp; réparation"
+						style="color: #7f7f60; font-size: 40px; opacity: 0.7; width: 100%; border-radius: 1px; z-index:90" />
+				</td>
+			</tr>
+			<tr style="margin-left: 0">
+				<td colspan="2"
+					style="overflow: hidden; vertical-align: top; margin-left: 0"><p:carousel
+						var="img" value="#{homeController.imgs}" numVisible="1"
 						effect="easeInStrong" autoPlayInterval="5000" circular="true"
-						style="border: none; background-color: transparent; "
+						style="border: none; background-color: transparent; margin-top: 5px; margin-left:0"
 						itemStyle="background-color: transparent; border:none;">
 						<h:graphicImage url="#{img}"
-							style="border-radius: 5px; background: #CACABC; width: 500px;" />
-					</p:carousel> <h:graphicImage url="/resources/img/logo.png" width="100"
-						style="opacity:0.7 ; z-index:90; position: absolute; bottom: 20px; left: 25px" /></td>
+							style="border-radius: 1px; background: #CACABC; width: 500px; margin-left:0" />
+					</p:carousel></td>
 				<td style="vertical-align: top;"><rich:panel
 						bodyClass="blanckBody" header="Réparations de vélos d'occasion"
 						headerClass="headerPanel"
 						style="background-color: #D1CCB5; margin-top: 5px; border:none">
-						<h:graphicImage url="/resources/img/cambio3.jpg"
-							styleClass="homeImg" />
-						<h:outputText value="#{messages['home1']}" escape="false" />
+						<table style="margin-left: 0">
+							<tr style="margin-left: 0">
+								<td style="margin-left: 0"><h:graphicImage
+										url="/resources/img/home7.jpg" styleClass="homeImg" /></td>
+								<td><h:outputText value="#{messages['home1']}"
+										escape="false" /></td>
+							</tr>
+						</table>
 					</rich:panel></td>
 			</tr>
 			<tr>
-				<td style="vertical-align: top; width: 33%"><rich:panel
-						header="Vente occasions neuf et occasions"
-						headerClass="headerPanel" bodyClass="blanckBody"
+				<td style="vertical-align: top; width: 33%" class="blanckBody"><rich:panel
+						header="Vente vélos neufs et occasions" headerClass="headerPanel"
+						bodyClass="blanckBody"
 						style="background-color: #D1CCB5; margin-top: 5px; border:none">
 						<h:graphicImage url="/resources/img/velosmall.jpg"
 							styleClass="homeImg" />
 						<h:outputText value="#{messages['home2']}" escape="false" />
 					</rich:panel></td>
-				<td style="vertical-align: top; width: 33%"><rich:panel
+				<td style="vertical-align: top; width: 33%;" class="blanckBody"><rich:panel
 						header="Des professionels pour le conseil"
-						headerClass="headerPanel" bodyClass="blanckBody"
-						style="background-color: #D1CCB5; margin-top: 5px; border:none">
-						<h:graphicImage url="/resources/img/verhip1.jpg"
-							styleClass="homeImg" />
-						<h:outputText value="#{messages['home3']}" escape="false" />
+						headerClass="headerPanel" bodyClass="blanckBody" 
+						style="background-color: #D1CCB5; margin-top: 5px; border: none">
+						<table>
+							<tr>
+								<td><h:graphicImage url="/resources/img/verhip1.jpg"
+										styleClass="homeImg" /></td>
+								<td><h:outputText value="#{messages['home3']}"
+										escape="false" /></td>
+							</tr>
+						</table>
 					</rich:panel></td>
-				<td style="vertical-align: top; width: 33%"><rich:panel
+				<td style="vertical-align: top; width: 33%" class="blanckBody"><rich:panel
 						header="Locations, tourisme, évènements" bodyClass="blanckBody"
 						headerClass="headerPanel"
 						style="background-color: #D1CCB5; margin-top: 5px; border:none">
